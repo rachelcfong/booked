@@ -25,6 +25,7 @@ const SignUpEmail = ({ navigation }) => {
         style={styles.textInput}
         value={password}
         onChangeText={(text) => setPassword(text)}
+        secureTextEntry={true}
         placeholder={"Password"}
       />
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>

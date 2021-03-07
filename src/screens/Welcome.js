@@ -34,7 +34,7 @@ const Welcome = ({ navigation }) => {
   const handleSubmit = () => {
     setEmail(email);
     setPassword(password);
-    navigation.navigate("UserDashboard");
+    navigation.navigate("AuthedHome");
   };
 
   return (
