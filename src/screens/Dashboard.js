@@ -12,11 +12,11 @@ import {
 import AppContext from "../../AppContext";
 import interpreter1 from "../../assets/interpreter1.png";
 import { NavigationContainer } from "@react-navigation/native";
-//import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 //import BottomNavigationBar from "../components/BottomNavigationBar";
 import Home from "./Home";
 
-const UserDashboard = ({ navigation }) => {
+const Dashboard = ({ navigation }) => {
   const { email, password, firstName, lastName, gender, preferredLanguage } = React.useContext(
     AppContext
   );
@@ -24,8 +24,6 @@ const UserDashboard = ({ navigation }) => {
     { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
     { interpreter: "Rachel F", arrivalTime: "1:45pm", startTime: "2:00pm" },
   ];
-  console.log(email, password, firstName, lastName, gender, preferredLanguage);
-  //const Tab = createBottomTabNavigator();
 
   return (
     <>
@@ -33,10 +31,10 @@ const UserDashboard = ({ navigation }) => {
         <Text style={styles.title}>Good morning, {firstName}!</Text>
         <Text style={styles.h2}>Upcoming appointments</Text>
         <ScrollView snapToAlignment horizontal pagingEnabled>
-          {APPOINTMENTS.map((appointment) => {
+          {APPOINTMENTS.map((appointment, index) => {
             return (
               <>
-                <View style={styles.card}>
+                <View style={styles.card} key={index}>
                   <View style={styles.topCard}>
                     <Text style={styles.h1}>Physical examination</Text>
                     <Text style={styles.body}>Friday March 5 2021</Text>
@@ -70,6 +68,7 @@ const UserDashboard = ({ navigation }) => {
             );
           })}
         </ScrollView>
+
         {/* <BottomNavigationBar /> */}
       </View>
     </>
@@ -170,7 +169,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 30,
     marginLeft: 15,
-    alignSelf: "flex-start",
+    marginRight: 210,
+    //alignSelf: "flex-start",
   },
   body: {
     marginTop: 5,
@@ -182,4 +182,4 @@ const styles = StyleSheet.create({
   timeCardHeaders: { marginTop: 15 },
 });
 
-export default UserDashboard;
+export default Dashboard;

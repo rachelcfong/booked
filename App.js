@@ -7,7 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Home from "./src/screens/Home";
 import Login from "./src/screens/Login";
 import AppContext from "./AppContext";
-import UserDashboard from "./src/screens/UserDashboard";
+import AuthedHome from "./src/screens/AuthedHome";
 import SignUpEmail from "./src/screens/SignUpEmail";
 import Welcome from "./src/screens/Welcome";
 
@@ -46,7 +46,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="UserDashboard" component={UserDashboard} />
+          <Stack.Screen name="AuthedHome" component={AuthedHome} />
           <Stack.Screen name="SignUpEmail" component={SignUpEmail} />
           <Stack.Screen name="Welcome" component={Welcome} />
         </Stack.Navigator>
