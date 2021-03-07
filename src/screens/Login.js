@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: 300,
+    borderRadius: 8,
   },
   button: {
     alignItems: "center",
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 300,
     marginTop: 60,
+    borderRadius: 8,
   },
   forgetPassword: {
     alignItems: "center",
