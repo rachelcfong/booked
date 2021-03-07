@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useContext } from "react";
 import {
   StyleSheet,
@@ -7,12 +6,9 @@ import {
   TextInput,
   Image,
   TouchableOpacity,
-  Icon,
   ScrollView,
   KeyboardAvoidingView,
-  KeyboardAwareView,
 } from "react-native";
-// import { Dropdown } from "react-native-material-dropdown-v2";
 import DropDownPicker from "react-native-dropdown-picker";
 
 import AppContext from "../../AppContext";
@@ -30,11 +26,8 @@ const Welcome = ({ navigation }) => {
     setLastName,
     address,
     setAddress,
-    gender,
     setGender,
-    healthcareProvider,
     setHealthcareProvider,
-    preferredLanguge,
     setPreferredLanguage,
   } = useContext(AppContext);
 
@@ -53,6 +46,24 @@ const Welcome = ({ navigation }) => {
       >
         <Text style={styles.header}>Welcome</Text>
         <Image style={styles.profileImage} source={rachel} />
+        <TextInput
+          style={styles.textInput}
+          value={firstName}
+          onChangeText={(text) => setFirstName(text)}
+          placeholder={"First Name"}
+        />
+        <TextInput
+          style={styles.textInput}
+          value={lastName}
+          onChangeText={(text) => setLastName(text)}
+          placeholder={"Last Name"}
+        />
+        <TextInput
+          style={styles.textInput}
+          value={address}
+          onChangeText={(text) => setAddress(text)}
+          placeholder={"Address"}
+        />
         <View style={styles.pickerOne}>
           <DropDownPicker
             style={styles.pickerOne}
@@ -60,7 +71,7 @@ const Welcome = ({ navigation }) => {
               { label: "Female", value: "Female" },
               { label: "Male", value: "Male" },
             ]}
-            containerStyle={{ height: 40, width: 300, zIndex: 1 }}
+            containerStyle={{ height: 40, width: 300, marginTop: 20, zIndex: 1 }}
             itemStyle={{
               justifyContent: "flex-start",
             }}
@@ -98,30 +109,7 @@ const Welcome = ({ navigation }) => {
             onChangeItem={(item) => setPreferredLanguage(item.value)}
           />
         </View>
-        <TextInput
-          style={styles.textInput}
-          value={firstName}
-          onChangeText={(text) => setFirstName(text)}
-          placeholder={"First Name"}
-        />
-        <TextInput
-          style={styles.textInput}
-          value={lastName}
-          onChangeText={(text) => setLastName(text)}
-          placeholder={"Last Name"}
-        />
-        <TextInput
-          style={styles.textInput}
-          value={address}
-          onChangeText={(text) => setAddress(text)}
-          placeholder={"Address"}
-        />
-        <TextInput
-          style={styles.textInput}
-          value={gender}
-          onChangeText={(text) => setGender(text)}
-          placeholder={"Gender"}
-        />
+
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text>Complete</Text>
         </TouchableOpacity>

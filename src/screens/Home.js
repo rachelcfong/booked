@@ -10,7 +10,7 @@ const Home = ({ navigation }) => {
         Find trusted interterpreters for health-related appointments
       </Text>
       <View style={styles.bottomContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignUpEmail")}>
           <Text>Sign up</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>

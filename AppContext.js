@@ -5,5 +5,17 @@ const AppContext = React.createContext({
   setEmail: () => {},
   password: "",
   setPassword: () => {},
+  firstName: "",
+  setFirstName: () => {},
+  lastName: "",
+  setLastName: () => {},
+  address: "",
+  setAddress: () => {},
+  gender: "",
+  setGender: () => {},
+  healthcareProvider: "",
+  setHealthcareProvider: () => {},
+  preferredLanguage: "",
+  setPreferredLanguage: () => {},
 });
 export default AppContext;
