@@ -48,7 +48,7 @@ const AuthedHome = ({ navigation }) => {
           },
         })}
         tabBarOptions={{
-          activeTintColor: "tomato",
+          activeTintColor: "#307FE2",
           inactiveTintColor: "gray",
         }}
       >
