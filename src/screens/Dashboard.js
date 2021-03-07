@@ -22,7 +22,7 @@ const Dashboard = ({ navigation }) => {
   );
   const APPOINTMENTS = [
     { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
-    { interpreter: "Rachel F", arrivalTime: "1:45pm", startTime: "2:00pm" },
+    { interpreter: "", arrivalTime: "1:45pm", startTime: "2:00pm" },
   ];
 
   return (
@@ -33,38 +33,42 @@ const Dashboard = ({ navigation }) => {
         <ScrollView snapToAlignment horizontal pagingEnabled>
           {APPOINTMENTS.map((appointment, index) => {
             return (
-              <>
-                <View style={styles.card} key={index}>
-                  <View style={styles.topCard}>
-                    <Text style={styles.h1}>Physical examination</Text>
-                    <Text style={styles.body}>Friday March 5 2021</Text>
-                    <Text style={styles.body}>Stanford Hospital</Text>
-                  </View>
-                  <View style={styles.midCard}>
-                    <View style={styles.container}>
-                      <Text>Interpreter</Text>
-                      <View style={styles.interpreterCard}>
-                        <Image style={styles.profileImage} source={interpreter1} />
-                        <Text style={styles.name}>{appointment.interpreter}</Text>
-                      </View>
-                    </View>
-                    <View style={styles.container}>
-                      <Text>Time</Text>
-                      <View style={styles.timeCard}>
-                        <Text>Arrive at</Text>
-                        <Text style={styles.h1}>{appointment.arrivalTime}</Text>
-                        <Text style={styles.timeCardHeaders}>Starts at</Text>
-                        <Text style={styles.h1}>{appointment.startTime}</Text>
-                      </View>
+              <View style={styles.card} key={index}>
+                <View style={styles.topCard}>
+                  <Text style={styles.h1}>Physical examination</Text>
+                  <Text style={styles.body}>Friday March 5 2021</Text>
+                  <Text style={styles.body}>Stanford Hospital</Text>
+                </View>
+                <View style={styles.midCard}>
+                  <View style={styles.container}>
+                    <Text>Interpreter</Text>
+                    <View style={styles.interpreterCard}>
+                      {appointment.interpreter ? (
+                        <View>
+                          <Image style={styles.profileImage} source={interpreter1} />
+                          <Text style={styles.name}>{appointment.interpreter}</Text>
+                        </View>
+                      ) : (
+                        <View></View>
+                      )}
                     </View>
                   </View>
-                  <View style={styles.bottomCard}>
-                    <TouchableOpacity style={styles.button} onPress={() => {}}>
-                      <Text>Edit booking</Text>
-                    </TouchableOpacity>
+                  <View style={styles.container}>
+                    <Text>Time</Text>
+                    <View style={styles.timeCard}>
+                      <Text>Arrive at</Text>
+                      <Text style={styles.h1}>{appointment.arrivalTime}</Text>
+                      <Text style={styles.timeCardHeaders}>Starts at</Text>
+                      <Text style={styles.h1}>{appointment.startTime}</Text>
+                    </View>
                   </View>
                 </View>
-              </>
+                <View style={styles.bottomCard}>
+                  <TouchableOpacity style={styles.button} onPress={() => {}}>
+                    <Text>{appointment.interpreter ? "Edit booking" : "Book interpreter"}</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
             );
           })}
         </ScrollView>
@@ -84,8 +88,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 20,
     padding: 10,
-    width: 380,
-    height: 425,
+    width: 350,
+    height: 410,
     backgroundColor: "white",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1 },
@@ -128,7 +132,7 @@ const styles = StyleSheet.create({
   topCard: {
     marginTop: 10,
     marginLeft: 10,
-    height: 100,
+    height: 90,
     //backgroundColor: "gray",
   },
   midCard: {
