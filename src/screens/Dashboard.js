@@ -13,7 +13,6 @@ import AppContext from "../../AppContext";
 import interpreter1 from "../../assets/interpreter1.png";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-//import BottomNavigationBar from "../components/BottomNavigationBar";
 import Home from "./Home";
 
 const Dashboard = ({ navigation }) => {
@@ -26,56 +25,54 @@ const Dashboard = ({ navigation }) => {
   ];
 
   return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.title}>Good morning, {firstName}!</Text>
-        <Text style={styles.h2}>Upcoming appointments</Text>
-        <ScrollView snapToAlignment horizontal pagingEnabled>
-          {APPOINTMENTS.map((appointment, index) => {
-            return (
-              <View style={styles.card} key={index}>
-                <View style={styles.topCard}>
-                  <Text style={styles.h1}>Physical examination</Text>
-                  <Text style={styles.body}>Friday March 5 2021</Text>
-                  <Text style={styles.body}>Stanford Hospital</Text>
-                </View>
-                <View style={styles.midCard}>
-                  <View style={styles.container}>
-                    <Text>Interpreter</Text>
-                    <View style={styles.interpreterCard}>
-                      {appointment.interpreter ? (
-                        <View>
-                          <Image style={styles.profileImage} source={interpreter1} />
-                          <Text style={styles.name}>{appointment.interpreter}</Text>
-                        </View>
-                      ) : (
-                        <View></View>
-                      )}
-                    </View>
-                  </View>
-                  <View style={styles.container}>
-                    <Text>Time</Text>
-                    <View style={styles.timeCard}>
-                      <Text>Arrive at</Text>
-                      <Text style={styles.h1}>{appointment.arrivalTime}</Text>
-                      <Text style={styles.timeCardHeaders}>Starts at</Text>
-                      <Text style={styles.h1}>{appointment.startTime}</Text>
-                    </View>
+    <View style={styles.container}>
+      <Text style={styles.title}>Good morning, {firstName}!</Text>
+      <Text style={styles.h2}>Upcoming appointments</Text>
+      <ScrollView snapToAlignment horizontal pagingEnabled>
+        {APPOINTMENTS.map((appointment, index) => {
+          return (
+            <View style={styles.card} key={index}>
+              <View style={styles.topCard}>
+                <Text style={styles.h1}>Physical examination</Text>
+                <Text style={styles.body}>Friday March 5 2021</Text>
+                <Text style={styles.body}>Stanford Hospital</Text>
+              </View>
+              <View style={styles.midCard}>
+                <View style={styles.container}>
+                  <Text>Interpreter</Text>
+                  <View style={styles.interpreterCard}>
+                    {appointment.interpreter ? (
+                      <View>
+                        <Image style={styles.profileImage} source={interpreter1} />
+                        <Text style={styles.name}>{appointment.interpreter}</Text>
+                      </View>
+                    ) : (
+                      <View></View>
+                    )}
                   </View>
                 </View>
-                <View style={styles.bottomCard}>
-                  <TouchableOpacity style={styles.button} onPress={() => {}}>
-                    <Text>{appointment.interpreter ? "Edit booking" : "Book interpreter"}</Text>
-                  </TouchableOpacity>
+                <View style={styles.container}>
+                  <Text>Time</Text>
+                  <View style={styles.timeCard}>
+                    <Text>Arrive at</Text>
+                    <Text style={styles.h1}>{appointment.arrivalTime}</Text>
+                    <Text style={styles.timeCardHeaders}>Starts at</Text>
+                    <Text style={styles.h1}>{appointment.startTime}</Text>
+                  </View>
                 </View>
               </View>
-            );
-          })}
-        </ScrollView>
+              <View style={styles.bottomCard}>
+                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                  <Text>{appointment.interpreter ? "Edit booking" : "Book interpreter"}</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
 
-        {/* <BottomNavigationBar /> */}
-      </View>
-    </>
+
   );
 };
 
@@ -133,11 +130,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10,
     height: 90,
-    //backgroundColor: "gray",
+
   },
   midCard: {
     height: 200,
-    //backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -174,7 +170,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 15,
     marginRight: 210,
-    //alignSelf: "flex-start",
   },
   body: {
     marginTop: 5,
