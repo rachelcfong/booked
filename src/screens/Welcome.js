@@ -9,8 +9,11 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
+import Button from "../components/Button";
+import ClearButton from "../components/ClearButton";
+import TextField from "../components/TextField";
+import Typography from "../components/Typography";
 import DropDownPicker from "react-native-dropdown-picker";
-
 import AppContext from "../../AppContext";
 import rachel from "../../assets/rachel.png";
 
@@ -38,40 +41,25 @@ const Welcome = ({ navigation }) => {
   };
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "white" }}>
       <KeyboardAvoidingView
         contentContainerStyle={styles.container}
         behavior="position"
-        style={{ flex: 1, zIndex: 5 }}
+        style={{ flex: 1, zIndex: 5, backgroundColor: "white" }}
       >
-        <Text style={styles.header}>Welcome</Text>
+        <Typography text={"Welcome"} defaultStyle={true} />
         <Image style={styles.profileImage} source={rachel} />
-        <TextInput
-          style={styles.textInput}
-          value={firstName}
-          onChangeText={(text) => setFirstName(text)}
-          placeholder={"First Name"}
-        />
-        <TextInput
-          style={styles.textInput}
-          value={lastName}
-          onChangeText={(text) => setLastName(text)}
-          placeholder={"Last Name"}
-        />
-        <TextInput
-          style={styles.textInput}
-          value={address}
-          onChangeText={(text) => setAddress(text)}
-          placeholder={"Address"}
-        />
+        <TextField value={firstName} placeholder={"First Name"} onTextChange={setFirstName} />
+        <TextField value={lastName} placeholder={"Last Name"} onTextChange={setLastName} />
+        <TextField value={address} placeholder={"Address"} onTextChange={setAddress} />
         <View style={styles.pickerOne}>
           <DropDownPicker
-            style={styles.pickerOne}
             items={[
               { label: "Female", value: "Female" },
               { label: "Male", value: "Male" },
             ]}
-            containerStyle={{ height: 40, width: 300, marginTop: 20, zIndex: 1 }}
+            style={{ backgroundColor: "#F6F6F6" }}
+            containerStyle={styles.picker}
             itemStyle={{
               justifyContent: "flex-start",
             }}
@@ -81,12 +69,12 @@ const Welcome = ({ navigation }) => {
         </View>
         <View style={styles.pickerTwo}>
           <DropDownPicker
-            style={styles.pickerTwo}
             items={[
               { label: "Stanford Healthcare", value: "Stanford Healthcare" },
               { label: "Kaiser", value: "Kaiser" },
             ]}
-            containerStyle={{ height: 40, width: 300, marginTop: 20, zIndex: 0 }}
+            style={{ backgroundColor: "#F6F6F6" }}
+            containerStyle={styles.picker}
             itemStyle={{
               justifyContent: "flex-start",
             }}
@@ -96,12 +84,12 @@ const Welcome = ({ navigation }) => {
         </View>
         <View style={styles.pickerThree}>
           <DropDownPicker
-            style={styles.pickerThree}
             items={[
               { label: "American Sign Language", value: "American Sign Language" },
               { label: "Spanish Sign Language", value: "Spanish Sign Language" },
             ]}
-            containerStyle={{ height: 40, width: 300, marginTop: 20, zIndex: -1 }}
+            style={{ backgroundColor: "#F6F6F6" }}
+            containerStyle={styles.picker}
             itemStyle={{
               justifyContent: "flex-start",
             }}
@@ -109,10 +97,9 @@ const Welcome = ({ navigation }) => {
             onChangeItem={(item) => setPreferredLanguage(item.value)}
           />
         </View>
-
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Text>Complete</Text>
-        </TouchableOpacity>
+        <View style={{ marginTop: 20 }}>
+          <Button buttonText={"Complete"} onClick={handleSubmit} />
+        </View>
       </KeyboardAvoidingView>
     </ScrollView>
   );
@@ -122,6 +109,7 @@ const styles = StyleSheet.create({
   pickerOne: { zIndex: 3, position: "relative" },
   pickerTwo: { zIndex: 2, position: "relative" },
   pickerThree: { zIndex: 1, position: "relative" },
+  picker: { height: 50, width: 343, marginTop: 20 },
   container: {
     flex: 1,
     alignItems: "center",
@@ -137,11 +125,6 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 300,
     borderRadius: 8,
-  },
-  header: {
-    marginTop: 30,
-    marginBottom: 10,
-    fontSize: 40,
   },
   subtitle: {
     marginTop: 20,
@@ -165,7 +148,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   profileImage: {
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 20,
     width: 100,
     height: 100,

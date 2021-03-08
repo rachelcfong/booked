@@ -1,13 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useContext, useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
-import App from "../../App";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Button from "../components/Button";
+import ClearButton from "../components/ClearButton";
+import TextField from "../components/TextField";
+import Typography from "../components/Typography";
 import AppContext from "../../AppContext";
 
 const Login = ({ navigation }) => {
   const { email, setEmail, password, setPassword } = useContext(AppContext);
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
     setEmail(email);
@@ -16,29 +17,20 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.header}>Login</Text>
-        <TextInput
-          style={styles.textInput}
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          placeholder={"Email"}
-        />
-        <TextInput
-          style={styles.textInput}
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-          placeholder={"Password"}
-        />
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Text>Log in</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.forgetPassword}>
-          <Text>Forgot your password?</Text>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <Typography text={"Login"} defaultStyle={true} />
+      <TextField value={email} placeholder={"Email"} onTextChange={setEmail} />
+      <TextField
+        value={password}
+        placeholder={"Password"}
+        onTextChange={setPassword}
+        hideInput={true}
+      />
+      <View style={styles.button}>
+        <Button buttonText="Log in" onClick={handleSubmit} />
       </View>
-    </>
+      <ClearButton buttonText="Forgot your password?" onClick={() => {}} />
+    </View>
   );
 };
 
@@ -46,7 +38,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    marginTop: 30,
+    marginTop: 0,
+    backgroundColor: "white",
   },
   header: {
     fontSize: 30,
@@ -61,14 +54,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   button: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10,
-    height: 50,
-    width: 300,
-    marginTop: 60,
-    borderRadius: 8,
+    marginTop: 50,
   },
   forgetPassword: {
     alignItems: "center",

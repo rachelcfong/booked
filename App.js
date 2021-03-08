@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-//import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./src/screens/Home";
 import Login from "./src/screens/Login";
 import AppContext from "./AppContext";
@@ -44,7 +43,7 @@ const App = () => {
     >
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="AuthedHome" component={AuthedHome} />
           <Stack.Screen name="SignUpEmail" component={SignUpEmail} />
