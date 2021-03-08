@@ -70,6 +70,10 @@ const Welcome = ({ navigation }) => {
             items={[
               { label: "Female", value: "Female" },
               { label: "Male", value: "Male" },
+              { label: "Non-binary", value: "Non-binary" },
+              { label: "Transgender", value: "Transgender" },
+              { label: "Intersex", value: "Intersex" },
+              { label: "I prefer not to say", value: "I prefer not to say" },
             ]}
             style={{ backgroundColor: "#F6F6F6" }}
             containerStyle={styles.picker}
@@ -85,6 +89,9 @@ const Welcome = ({ navigation }) => {
             items={[
               { label: "Stanford Healthcare", value: "Stanford Healthcare" },
               { label: "Kaiser", value: "Kaiser" },
+              { label: "Blue Shield", value: "Blue Shield" },
+              { label: "Sutter Health", value: "Sutter Health" },
+              { label: "Oscar Health Plan", value: "Oscar Health Plan" },
             ]}
             style={{ backgroundColor: "#F6F6F6" }}
             containerStyle={styles.picker}
@@ -100,6 +107,8 @@ const Welcome = ({ navigation }) => {
             items={[
               { label: "American Sign Language", value: "American Sign Language" },
               { label: "Spanish Sign Language", value: "Spanish Sign Language" },
+              { label: "Chinese Sign Language", value: "Chinese Sign Language" },
+              { label: "French Sign Language", value: "French Sign Language" },
             ]}
             style={{ backgroundColor: "#F6F6F6" }}
             containerStyle={styles.picker}
