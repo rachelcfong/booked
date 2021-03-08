@@ -71,6 +71,8 @@ const Dashboard = ({ navigation }) => {
         })}
       </ScrollView>
     </View>
+
+
   );
 };
 
@@ -128,6 +130,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10,
     height: 90,
+
   },
   midCard: {
     height: 200,
