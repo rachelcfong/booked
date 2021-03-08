@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -29,10 +29,23 @@ const Welcome = ({ navigation }) => {
     setLastName,
     address,
     setAddress,
+    gender,
     setGender,
+    healthcareProvider,
     setHealthcareProvider,
+    preferredLanguage,
     setPreferredLanguage,
   } = useContext(AppContext);
+
+  let formComplete =
+    email !== "" &&
+    password !== "" &&
+    firstName !== "" &&
+    lastName !== "" &&
+    address !== "" &&
+    gender !== "" &&
+    healthcareProvider !== "" &&
+    preferredLanguage !== "";
 
   const handleSubmit = () => {
     setEmail(email);
@@ -98,7 +111,7 @@ const Welcome = ({ navigation }) => {
           />
         </View>
         <View style={{ marginTop: 20 }}>
-          <Button buttonText={"Complete"} onClick={handleSubmit} />
+          <Button disabled={!formComplete} buttonText={"Complete"} onClick={handleSubmit} />
         </View>
       </KeyboardAvoidingView>
     </ScrollView>
