@@ -16,18 +16,14 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Feed from "./Feed";
-
-//import BottomNavigationBar from "../components/BottomNavigationBar";
 import Dashboard from "./Dashboard";
+import { APPOINTMENTS } from "../../constants";
 
 const AuthedHome = ({ navigation }) => {
   const { email, password, firstName, lastName, gender, preferredLanguage } = React.useContext(
     AppContext
   );
-  const APPOINTMENTS = [
-    { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
-    { interpreter: "Rachel F", arrivalTime: "1:45pm", startTime: "2:00pm" },
-  ];
+
   const Tab = createBottomTabNavigator();
 
   return (
@@ -42,8 +38,6 @@ const AuthedHome = ({ navigation }) => {
             } else if (route.name === "Feed") {
               iconName = focused ? "ios-star" : "star-outline";
             }
-
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
@@ -52,8 +46,8 @@ const AuthedHome = ({ navigation }) => {
           inactiveTintColor: "gray",
         }}
       >
-        <Tab.Screen name="Feed" component={Feed} />
         <Tab.Screen name="Dashboard" component={Dashboard} />
+        <Tab.Screen name="Feed" component={Feed} />
       </Tab.Navigator>
     </>
   );
