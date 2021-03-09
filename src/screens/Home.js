@@ -19,7 +19,9 @@ const Home = ({ navigation }) => {
       <Image style={styles.logo} source={bookedLogo} />
       <Image style={styles.backgroundImage} source={backgroundImage} />
       <View style={styles.bottomContainer}>
-        <Button buttonText="Login" onClick={() => navigation.navigate("Login")} />
+        <View style={{ marginLeft: 20, width: "100%" }}>
+          <Button buttonText="Login" onClick={() => navigation.navigate("Login")} />
+        </View>
         <ClearButton buttonText="Sign up" onClick={() => navigation.navigate("SignUpEmail")} />
       </View>
       <View style={styles.backgroundGradient}>
