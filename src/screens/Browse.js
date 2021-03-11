@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import Button from "../components/Button";
 import ClearButton from "../components/ClearButton";
-import TextField from "../components/TextField";
-import ErrorText from "../components/ErrorText";
 import Typography from "../components/Typography";
 import VerticalUserCard from "../components/VerticalUserCard";
 import HorizontalUserCard from "../components/HorizontalUserCard";
@@ -11,6 +8,7 @@ import Tag from "../components/Tag";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AppContext from "../../AppContext";
 import { INTERPRETERS, TAGS } from "../../constants";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Browse = ({ navigation }) => {
   // The boolean array below maps to if following tags are set:
@@ -67,13 +65,21 @@ const Browse = ({ navigation }) => {
             {INTERPRETERS.map((interpreter, index) => {
               return (
                 <View style={{ alignSelf: "center" }} key={index}>
-                  <VerticalUserCard
-                    name={interpreter.name}
-                    yearsExp={interpreter.yearsExp}
-                    rating={interpreter.rating}
-                    numReviews={interpreter.numReviews}
-                    imgSource={interpreter.imgSource}
-                  />
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate("InterpreterInfo", {
+                        interpreter: interpreter,
+                      })
+                    }
+                  >
+                    <VerticalUserCard
+                      name={interpreter.name}
+                      yearsExp={interpreter.yearsExp}
+                      rating={interpreter.rating}
+                      numReviews={interpreter.numReviews}
+                      imgSource={interpreter.imgSource}
+                    />
+                  </TouchableOpacity>
                 </View>
               );
             })}
@@ -97,6 +103,7 @@ const Browse = ({ navigation }) => {
                 {TAGS.map((tag, index) => {
                   return (
                     <Tag
+                      key={index}
                       label={tag.label}
                       clicked={tagStates[index]}
                       index={index}
@@ -115,14 +122,16 @@ const Browse = ({ navigation }) => {
             <ScrollView>
               {interpreters.map((interpreter, index) => {
                 return (
-                  <View>
-                    <HorizontalUserCard
-                      name={interpreter.name}
-                      yearsExp={interpreter.yearsExp}
-                      rating={interpreter.rating}
-                      numReviews={interpreter.numReviews}
-                      imgSource={interpreter.imgSource}
-                    />
+                  <View key={index}>
+                    <TouchableOpacity>
+                      <HorizontalUserCard
+                        name={interpreter.name}
+                        yearsExp={interpreter.yearsExp}
+                        rating={interpreter.rating}
+                        numReviews={interpreter.numReviews}
+                        imgSource={interpreter.imgSource}
+                      />
+                    </TouchableOpacity>
                   </View>
                 );
               })}
@@ -154,7 +163,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: "#1E3F63",
   },
-  interpreterCaro: { backgroundColor: "#F5FAFF", height: 240, marginBottom: 10 },
+  interpreterCaro: {
+    backgroundColor: "#F5FAFF",
+    height: 240,
+    marginBottom: 10,
+  },
   bottomContainer: {
     position: "absolute",
     bottom: 80,

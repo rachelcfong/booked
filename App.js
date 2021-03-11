@@ -10,6 +10,7 @@ import AuthedHome from "./src/screens/AuthedHome";
 import SignUpEmail from "./src/screens/SignUpEmail";
 import Welcome from "./src/screens/Welcome";
 import Browse from "./src/screens/Browse";
+import InterpreterInfo from "./src/screens/InterpreterInfo";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -50,6 +51,7 @@ const App = () => {
           <Stack.Screen name="SignUpEmail" component={SignUpEmail} />
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Browse" component={Browse} />
+          <Stack.Screen name="InterpreterInfo" component={InterpreterInfo}/>
         </Stack.Navigator>
       </NavigationContainer>
     </AppContext.Provider>

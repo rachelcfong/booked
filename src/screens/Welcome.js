@@ -16,6 +16,7 @@ import Typography from "../components/Typography";
 import DropDownPicker from "react-native-dropdown-picker";
 import AppContext from "../../AppContext";
 import rachel from "../../assets/rachel.png";
+import emptyProfile from "../../assets/empty-profile.png";
 
 const Welcome = ({ navigation }) => {
   const {
@@ -61,10 +62,22 @@ const Welcome = ({ navigation }) => {
         style={{ flex: 1, zIndex: 5, backgroundColor: "white" }}
       >
         <Typography text={"Welcome"} defaultStyle={true} />
-        <Image style={styles.profileImage} source={rachel} />
-        <TextField value={firstName} placeholder={"First Name"} onTextChange={setFirstName} />
-        <TextField value={lastName} placeholder={"Last Name"} onTextChange={setLastName} />
-        <TextField value={address} placeholder={"Address"} onTextChange={setAddress} />
+        <Image style={styles.profileImage} source={emptyProfile} />
+        <TextField
+          value={firstName}
+          placeholder={"First Name"}
+          onTextChange={setFirstName}
+        />
+        <TextField
+          value={lastName}
+          placeholder={"Last Name"}
+          onTextChange={setLastName}
+        />
+        <TextField
+          value={address}
+          placeholder={"Address"}
+          onTextChange={setAddress}
+        />
         <View style={styles.pickerOne}>
           <DropDownPicker
             items={[
@@ -105,9 +118,18 @@ const Welcome = ({ navigation }) => {
         <View style={styles.pickerThree}>
           <DropDownPicker
             items={[
-              { label: "American Sign Language", value: "American Sign Language" },
-              { label: "Spanish Sign Language", value: "Spanish Sign Language" },
-              { label: "Chinese Sign Language", value: "Chinese Sign Language" },
+              {
+                label: "American Sign Language",
+                value: "American Sign Language",
+              },
+              {
+                label: "Spanish Sign Language",
+                value: "Spanish Sign Language",
+              },
+              {
+                label: "Chinese Sign Language",
+                value: "Chinese Sign Language",
+              },
               { label: "French Sign Language", value: "French Sign Language" },
             ]}
             style={{ backgroundColor: "#F6F6F6" }}
@@ -119,8 +141,12 @@ const Welcome = ({ navigation }) => {
             onChangeItem={(item) => setPreferredLanguage(item.value)}
           />
         </View>
-        <View style={{ marginTop: 20 }}>
-          <Button disabled={!formComplete} buttonText={"Complete"} onClick={handleSubmit} />
+        <View style={{ marginTop: 20, width: 200 }}>
+          <Button
+            disabled={!formComplete}
+            buttonText={"Complete"}
+            onClick={handleSubmit}
+          />
         </View>
       </KeyboardAvoidingView>
     </ScrollView>

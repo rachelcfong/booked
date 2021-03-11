@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import AppContext from "../../AppContext";
 import interpreter1 from "../../assets/interpreter1.png";
+import blankProPic from "../../assets/blankpropic.png";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./Home";
@@ -21,9 +22,14 @@ import ErrorText from "../components/ErrorText";
 import Typography from "../components/Typography";
 
 const Dashboard = ({ navigation }) => {
-  const { email, password, firstName, lastName, gender, preferredLanguage } = React.useContext(
-    AppContext
-  );
+  const {
+    email,
+    password,
+    firstName,
+    lastName,
+    gender,
+    preferredLanguage,
+  } = React.useContext(AppContext);
   const APPOINTMENTS = [
     { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
     { interpreter: "", arrivalTime: "1:45pm", startTime: "2:00pm" },
@@ -32,7 +38,10 @@ const Dashboard = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <Typography text={`Good morning, ${email}! ☀️ `} defaultStyle={true} />
+        <Typography
+          text={`Good morning, ${firstName}! ☀️ `}
+          defaultStyle={true}
+        />
         <Text style={styles.h2}>Upcoming appointments</Text>
       </View>
       <View style={{ height: 460 }}>
@@ -51,14 +60,19 @@ const Dashboard = ({ navigation }) => {
                   <View style={styles.container}>
                     <Text>Interpreter</Text>
                     <View style={styles.interpreterCard}>
-                      {appointment.interpreter ? (
-                        <View>
-                          <Image style={styles.profileImage} source={interpreter1} />
-                          <Text style={styles.name}>{appointment.interpreter}</Text>
-                        </View>
-                      ) : (
-                        <View></View>
-                      )}
+                      <View>
+                        <Image
+                          style={styles.profileImage}
+                          source={
+                            appointment.interpreter !== ""
+                              ? interpreter1
+                              : blankProPic
+                          }
+                        />
+                        <Text style={styles.name}>
+                          {appointment.interpreter}
+                        </Text>
+                      </View>
                     </View>
                   </View>
                   <View style={styles.container}>
@@ -73,7 +87,11 @@ const Dashboard = ({ navigation }) => {
                 </View>
                 <View style={styles.bottomCard}>
                   <Button
-                    buttonText={appointment.interpreter ? "Edit booking" : "Book interpreter"}
+                    buttonText={
+                      appointment.interpreter
+                        ? "Edit booking"
+                        : "Book interpreter"
+                    }
                     onClick={() => {
                       navigation.navigate("Browse");
                     }}
