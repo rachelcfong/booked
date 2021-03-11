@@ -8,7 +8,9 @@ const Button = ({ disabled = false, buttonText, onClick }) => {
       disabled={disabled}
       onPress={() => onClick()}
     >
-      <Text style={disabled ? styles.disabledText : styles.text}>{buttonText}</Text>
+      <Text style={disabled ? styles.disabledText : styles.text}>
+        {buttonText}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -39,7 +41,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F6F6",
     padding: 10,
     height: 50,
-    width: 370,
     borderRadius: 50,
     marginTop: 15,
   },
