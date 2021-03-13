@@ -131,13 +131,14 @@ export const REVIEWS = [
     user: "Rachel F",
     interpreterId: 2,
     review:
-      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
+      "My friend recommended Rachel and I always try to book her if she’s available!",
     time: "3 hours ago",
   },
   {
     user: "Karl C",
     interpreterId: 1,
-    review: "GREAT WORK! :D",
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
     time: "6 hours ago",
   },
 ];
