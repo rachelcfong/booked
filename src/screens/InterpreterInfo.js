@@ -10,6 +10,7 @@ import AppContext from "../../AppContext";
 import moriah from "../../assets/moriah.png";
 import InterpreterExperience from "../components/InterpreterExperience";
 import InterpreterReviews from "../components/InterpreterReviews";
+import InterpreterBio from "../components/InterpreterBio";
 
 const InterpreterInfo = ({ route, navigation }) => {
   const { email, setEmail, password, setPassword } = useContext(AppContext);
@@ -29,11 +30,7 @@ const InterpreterInfo = ({ route, navigation }) => {
 
   const renderPage = () => {
     if (currPage === 0) {
-      return (
-        <ScrollView>
-          <Text>BIO</Text>
-        </ScrollView>
-      );
+      return <InterpreterBio interpreter={interpreter} />;
     } else if (currPage === 1) {
       return <InterpreterExperience interpreter={interpreter} />;
     } else {
