@@ -7,11 +7,32 @@ const InterpreterReviews = ({ interpreter }) => {
   return (
     <ScrollView>
       {REVIEWS.filter((review) => review.interpreterId === interpreter.id).map(
-        (review) => {
+        (review, index) => {
           return (
-            <View style={styles.reviewContainer}>
-              <Image style={styles.profileImage} source={blankProPic} />
-              <Text>{review.review}</Text>
+            <View key={index}>
+              <View style={styles.reviewContainer}>
+                <Image style={styles.profileImage} source={blankProPic} />
+                <View>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Text style={styles.miniHeader}>{review.user}</Text>
+                    <Text style={styles.lightText}>{review.time}</Text>
+                  </View>
+                  <View
+                    style={{
+                      width: 290,
+                      marginTop: 8,
+                    }}
+                  >
+                    <Text>{review.review}</Text>
+                  </View>
+                </View>
+              </View>
+              <View style={styles.line}></View>
             </View>
           );
         }
@@ -29,15 +50,29 @@ const styles = StyleSheet.create({
   },
   reviewContainer: {
     height: 90,
-    width: 380,
+    width: 370,
+    flex: 1,
     flexDirection: "row",
-    backgroundColor: "red",
+    padding: 10,
   },
   profileImage: {
     height: 40,
     width: 40,
     borderRadius: 30,
     marginRight: 12,
+  },
+  line: {
+    height: 1,
+    width: 350,
+    backgroundColor: "#E8E8E8",
+    marginBottom: 10,
+  },
+  miniHeader: {
+    fontWeight: "bold",
+    color: "#1E3F63",
+  },
+  lightText: {
+    color: "#BDBDBD",
   },
 });
 
