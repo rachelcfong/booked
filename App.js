@@ -13,7 +13,7 @@ import Browse from "./src/screens/Browse";
 import InterpreterInfo from "./src/screens/InterpreterInfo";
 import ConfirmBooking from "./src/screens/ConfirmBooking";
 import BookingConfirmation from "./src/screens/BookingConfirmation";
-
+import LeaveReview from "./src/screens/LeaveReview";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -64,7 +64,7 @@ const App = () => {
             name="Booking Confirmation"
             component={BookingConfirmation}
           />
-
+          <Stack.Screen name="Leave a review" component={LeaveReview} />
         </Stack.Navigator>
       </NavigationContainer>
     </AppContext.Provider>

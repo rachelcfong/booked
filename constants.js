@@ -2,7 +2,7 @@ export const APPOINTMENTS = [
   {
     interpreter: "Gabrielle S",
     interpreterId: "1",
-    arrivalTime: "8.45am",
+    arrivalTime: "8:45am",
     startTime: "9:00am",
   },
   {
@@ -10,6 +10,39 @@ export const APPOINTMENTS = [
     interpreterId: "1",
     arrivalTime: "1:45pm",
     startTime: "2:00pm",
+  },
+];
+
+export const PAST_APPOINTMENTS = [
+  {
+    interpreter: "Rachel F",
+    id: 2,
+    arrivalTime: "8:45am",
+    startTime: "9:00am",
+    dateString: "Friday March 5, 2021",
+    date: "3/5",
+    location: "Palo Alto Hospital",
+    hasReview: false,
+  },
+  {
+    interpreter: "Alex L",
+    id: 6,
+    arrivalTime: "10:45am",
+    startTime: "11:00am",
+    dateString: "Friday March 5, 2021",
+    date: "3/5",
+    location: "Sutter Health Oakland",
+    hasReview: true,
+  },
+  {
+    interpreter: "Jianna S",
+    id: 3,
+    arrivalTime: "12:45pm",
+    startTime: "1:00pm",
+    dateString: "Friday March 5, 2021",
+    date: "3/5",
+    location: "Kaiser Piedmont",
+    hasReview: false,
   },
 ];
 
@@ -37,7 +70,7 @@ export const INTERPRETERS = [
     yearsExp: 1,
     rating: 3,
     numReviews: 98,
-    imgSource: "interpreter1.png",
+    imgSource: require("./assets/interpreter1.png"),
     numAppts: 75,
     numPatients: 23,
     workLocation: "Sutter Health in Palo Alto",
@@ -53,7 +86,7 @@ export const INTERPRETERS = [
     yearsExp: 5,
     rating: 5,
     numReviews: 23,
-    imgSource: "interpreter1.png",
+    imgSource: require("./assets/interpreter1.png"),
     numAppts: 75,
     numPatients: 23,
     workLocation: "Sutter Health in Palo Alto",
@@ -101,7 +134,7 @@ export const INTERPRETERS = [
     yearsExp: 8,
     rating: 4.5,
     numReviews: 78,
-    imgSource: "interpreter1.png",
+    imgSource: require("./assets/interpreter1.png"),
     numAppts: 75,
     numPatients: 23,
     workLocation: "Sutter Health in Palo Alto",

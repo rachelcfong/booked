@@ -20,6 +20,8 @@ import ClearButton from "../components/ClearButton";
 import TextField from "../components/TextField";
 import ErrorText from "../components/ErrorText";
 import Typography from "../components/Typography";
+import { PAST_APPOINTMENTS } from "../../constants";
+import VerticalPastInterpreterCard from "../components/VerticalPastInterpreterCard";
 
 const Dashboard = ({ navigation }) => {
   const {
@@ -37,77 +39,94 @@ const Dashboard = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topContainer}>
-        <Typography
-          text={`Good morning, ${firstName}! ☀️ `}
-          defaultStyle={true}
-        />
-        <Text style={styles.h2}>Upcoming appointments</Text>
-      </View>
-      <View style={{ height: 460 }}>
-        <ScrollView horizontal pagingEnabled>
-          {APPOINTMENTS.map((appointment, index) => {
-            return (
-              <View style={styles.card} key={index}>
-                <View style={styles.topCard}>
-                  <Text style={styles.h1}>Physical examination</Text>
-                  <View style={{ marginTop: 10 }}>
-                    <Text style={styles.body}>Friday March 5 2021</Text>
-                    <Text style={styles.body}>Stanford Hospital</Text>
+      <ScrollView>
+        <View style={styles.topContainer}>
+          <Typography
+            text={`Good morning, ${firstName}! ☀️ `}
+            defaultStyle={true}
+          />
+          <Text style={styles.h2}>Upcoming appointments</Text>
+        </View>
+
+        <View style={{ height: 460 }}>
+          <ScrollView horizontal pagingEnabled>
+            {APPOINTMENTS.map((appointment, index) => {
+              return (
+                <View style={styles.card} key={index}>
+                  <View style={styles.topCard}>
+                    <Text style={styles.h1}>Physical examination</Text>
+                    <View style={{ marginTop: 10 }}>
+                      <Text style={styles.body}>Friday March 5 2021</Text>
+                      <Text style={styles.body}>Stanford Hospital</Text>
+                    </View>
                   </View>
-                </View>
-                <View style={styles.midCard}>
-                  <View style={styles.container}>
-                    <Text>Interpreter</Text>
-                    <View style={styles.interpreterCard}>
-                      <View>
-                        <Image
-                          style={styles.profileImage}
-                          source={
-                            appointment.interpreter !== ""
-                              ? interpreter1
-                              : blankProPic
-                          }
-                        />
-                        <Text style={styles.name}>
-                          {appointment.interpreter}
-                        </Text>
+                  <View style={styles.midCard}>
+                    <View style={styles.container}>
+                      <Text>Interpreter</Text>
+                      <View style={styles.interpreterCard}>
+                        <View>
+                          <Image
+                            style={styles.profileImage}
+                            source={
+                              appointment.interpreter !== ""
+                                ? interpreter1
+                                : blankProPic
+                            }
+                          />
+                          <Text style={styles.name}>
+                            {appointment.interpreter}
+                          </Text>
+                        </View>
+                      </View>
+                    </View>
+                    <View style={styles.container}>
+                      <Text>Time</Text>
+                      <View style={styles.timeCard}>
+                        <Text>Arrive at</Text>
+                        <Text style={styles.h1}>{appointment.arrivalTime}</Text>
+                        <Text style={styles.timeCardHeaders}>Starts at</Text>
+                        <Text style={styles.h1}>{appointment.startTime}</Text>
                       </View>
                     </View>
                   </View>
-                  <View style={styles.container}>
-                    <Text>Time</Text>
-                    <View style={styles.timeCard}>
-                      <Text>Arrive at</Text>
-                      <Text style={styles.h1}>{appointment.arrivalTime}</Text>
-                      <Text style={styles.timeCardHeaders}>Starts at</Text>
-                      <Text style={styles.h1}>{appointment.startTime}</Text>
-                    </View>
+                  <View style={styles.bottomCard}>
+                    <Button
+                      buttonText={
+                        appointment.interpreter
+                          ? "Edit booking"
+                          : "Book interpreter"
+                      }
+                      onClick={() => {
+                        navigation.navigate("Browse", {
+                          appointment: appointment,
+                        });
+                      }}
+                    />
                   </View>
                 </View>
-                <View style={styles.bottomCard}>
-                  <Button
-                    buttonText={
-                      appointment.interpreter
-                        ? "Edit booking"
-                        : "Book interpreter"
-                    }
-                    onClick={() => {
-                      navigation.navigate("Browse", {
-                        appointment: appointment,
-                      });
-                    }}
+              );
+            })}
+          </ScrollView>
+        </View>
+
+        {/* Bottom caroseul */}
+        <View>
+          <Text style={styles.miniTitles}>Past interpreters</Text>
+          <View style={styles.pastInterpretersContainer}>
+            <ScrollView horizontal>
+              {PAST_APPOINTMENTS.map((appointment, index) => {
+                return (
+                  <VerticalPastInterpreterCard
+                    navigation={navigation}
+                    appointment={appointment}
+                    key={index}
                   />
-                </View>
-              </View>
-            );
-          })}
-        </ScrollView>
-      </View>
-      {/* Bottom caroseul */}
-      {/* {APPOINTMENTS.map((appointment, index) => {
-        return <View style={} key={index}></View>;
-      })} */}
+                );
+              })}
+            </ScrollView>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -163,6 +182,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 2.5,
   },
+  pastInterpretersContainer: {
+    backgroundColor: "#F5FAFF",
+    height: 260,
+    marginTop: 10,
+  },
   profileImage: {
     width: 110,
     height: 110,
@@ -192,6 +216,12 @@ const styles = StyleSheet.create({
     width: 300,
     marginTop: 20,
   },
+  miniTitles: {
+    fontWeight: "bold",
+    marginLeft: 20,
+    marginTop: 20,
+    color: "#1E3F63",
+  },
   title: {
     fontSize: 20,
     fontWeight: "bold",
@@ -207,6 +237,7 @@ const styles = StyleSheet.create({
   },
   h2: {
     fontSize: 15,
+    fontWeight: "bold",
     color: "#1E3F63",
   },
   body: {
