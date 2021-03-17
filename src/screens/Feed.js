@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import AppContext from "../../AppContext";
 
 const Feed = ({ navigation }) => {
+  const { reviews } = useContext(AppContext);
+  console.log("REVIWEWS", reviews);
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Feed</Text>

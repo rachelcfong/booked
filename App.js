@@ -24,6 +24,7 @@ const App = () => {
   const [gender, setGender] = useState("");
   const [healthcareProvider, setHealthcareProvider] = useState("");
   const [preferredLanguage, setPreferredLanguage] = useState("");
+  const [reviews, setReviews] = useState([]);
 
   return (
     <AppContext.Provider
@@ -44,6 +45,8 @@ const App = () => {
         setHealthcareProvider: setHealthcareProvider,
         preferredLanguage: preferredLanguage,
         setPreferredLanguage: setPreferredLanguage,
+        reviews: reviews,
+        setReviews: setReviews,
       }}
     >
       <NavigationContainer>
