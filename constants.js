@@ -175,3 +175,29 @@ export const REVIEWS = [
     time: "6 hours ago",
   },
 ];
+
+export const INITIAL_REVIEWS = [
+  {
+    user: "You",
+    id: 1,
+    rating: 4,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "This was a great appointment, a great interpreter",
+    report: false,
+    reportText: "",
+    time: "15 min ago",
+  },
+  {
+    user: "You",
+    id: 1,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "This was a great appointment, a great interpreter",
+    report: false,
+    reportText: "",
+    time: "15 min ago",
+  },
+];
