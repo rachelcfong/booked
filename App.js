@@ -14,6 +14,7 @@ import InterpreterInfo from "./src/screens/InterpreterInfo";
 import ConfirmBooking from "./src/screens/ConfirmBooking";
 import BookingConfirmation from "./src/screens/BookingConfirmation";
 
+
 const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,6 +64,7 @@ const App = () => {
             name="Booking Confirmation"
             component={BookingConfirmation}
           />
+
         </Stack.Navigator>
       </NavigationContainer>
     </AppContext.Provider>
