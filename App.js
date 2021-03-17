@@ -14,6 +14,7 @@ import InterpreterInfo from "./src/screens/InterpreterInfo";
 import ConfirmBooking from "./src/screens/ConfirmBooking";
 import BookingConfirmation from "./src/screens/BookingConfirmation";
 import LeaveReview from "./src/screens/LeaveReview";
+import { INITIAL_REVIEWS } from "./constants";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ const App = () => {
   const [gender, setGender] = useState("");
   const [healthcareProvider, setHealthcareProvider] = useState("");
   const [preferredLanguage, setPreferredLanguage] = useState("");
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState(INITIAL_REVIEWS);
 
   return (
     <AppContext.Provider
