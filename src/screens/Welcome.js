@@ -1,21 +1,16 @@
 import React, { useContext, useState } from "react";
 import {
   StyleSheet,
-  Text,
   View,
-  TextInput,
   Image,
-  TouchableOpacity,
   ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
 import Button from "../components/Button";
-import ClearButton from "../components/ClearButton";
 import TextField from "../components/TextField";
 import Typography from "../components/Typography";
 import DropDownPicker from "react-native-dropdown-picker";
 import AppContext from "../../AppContext";
-import rachel from "../../assets/rachel.png";
 import emptyProfile from "../../assets/empty-profile.png";
 
 const Welcome = ({ navigation }) => {
