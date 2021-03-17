@@ -17,5 +17,7 @@ const AppContext = React.createContext({
   setHealthcareProvider: () => {},
   preferredLanguage: "",
   setPreferredLanguage: () => {},
+  reviews: [],
+  setReviews: () => {},
 });
 export default AppContext;

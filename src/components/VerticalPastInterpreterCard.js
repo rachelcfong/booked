@@ -11,7 +11,7 @@ const VerticalPastInterpreterCard = ({ appointment, navigation }) => {
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Leave a review");
+          navigation.navigate("Leave a review", { appointment: appointment });
         }}
       >
         <View style={styles.card}>

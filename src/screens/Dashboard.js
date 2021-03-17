@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -6,7 +5,6 @@ import {
   View,
   ScrollView,
   Image,
-  TouchableOpacity,
   TextInput,
 } from "react-native";
 import AppContext from "../../AppContext";
