@@ -47,7 +47,7 @@ const ConfirmBooking = ({ route, navigation }) => {
       <View style={styles.confirmButton}>
         <Button
           buttonText={"Confirm"}
-          onClick={() => navigation.navigate("AuthedHome")}
+          onClick={() => navigation.navigate("Booking Confirmation")}
         />
       </View>
     </View>

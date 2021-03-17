@@ -125,7 +125,14 @@ const Browse = ({ route, navigation }) => {
               {interpreters.map((interpreter, index) => {
                 return (
                   <View key={index}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={() =>
+                        navigation.navigate("Interpreter Info", {
+                          interpreter: interpreter,
+                          appointment: appointment,
+                        })
+                      }
+                    >
                       <HorizontalUserCard
                         name={interpreter.name}
                         yearsExp={interpreter.yearsExp}
