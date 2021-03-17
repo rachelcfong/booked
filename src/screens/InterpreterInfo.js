@@ -14,7 +14,7 @@ import InterpreterBio from "../components/InterpreterBio";
 
 const InterpreterInfo = ({ route, navigation }) => {
   const { email, setEmail, password, setPassword } = useContext(AppContext);
-  const { interpreter } = route.params;
+  const { interpreter, appointment } = route.params;
   const [currPage, setCurrPage] = useState(1);
   const options = [
     { label: "Bio", value: "0" },
@@ -47,7 +47,14 @@ const InterpreterInfo = ({ route, navigation }) => {
           <Text>{`${interpreter.yearsExp} years of experience`}</Text>
         </View>
         <View style={{ width: 125 }}>
-          <Button buttonText={"Book"} />
+          <Button
+            buttonText={"Book"}
+            onClick={() =>
+              navigation.navigate("Confirm Booking", {
+                appointment: appointment,
+              })
+            }
+          />
         </View>
       </View>
       <Image style={styles.profileImage} source={moriah} />

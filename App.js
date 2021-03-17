@@ -11,6 +11,7 @@ import SignUpEmail from "./src/screens/SignUpEmail";
 import Welcome from "./src/screens/Welcome";
 import Browse from "./src/screens/Browse";
 import InterpreterInfo from "./src/screens/InterpreterInfo";
+import ConfirmBooking from "./src/screens/ConfirmBooking";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -45,13 +46,18 @@ const App = () => {
     >
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="AuthedHome" component={AuthedHome} />
           <Stack.Screen name="SignUpEmail" component={SignUpEmail} />
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Browse" component={Browse} />
-          <Stack.Screen name="InterpreterInfo" component={InterpreterInfo}/>
+          <Stack.Screen name="Interpreter Info" component={InterpreterInfo} />
+          <Stack.Screen name="Confirm Booking" component={ConfirmBooking} />
         </Stack.Navigator>
       </NavigationContainer>
     </AppContext.Provider>

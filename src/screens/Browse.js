@@ -10,12 +10,13 @@ import AppContext from "../../AppContext";
 import { INTERPRETERS, TAGS } from "../../constants";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Browse = ({ navigation }) => {
+const Browse = ({ route, navigation }) => {
   // The boolean array below maps to if following tags are set:
   // [minThreeYears, minThreeStars, minFourStars, sameGender]
   const [tagStates, setTagStates] = useState([false, false, false, false]);
   const [interpreters, setInterpreters] = useState([...INTERPRETERS]);
   const { gender } = React.useContext(AppContext);
+  const { appointment } = route.params;
 
   const filterFunctions = [
     (interpreter) => {
@@ -67,8 +68,9 @@ const Browse = ({ navigation }) => {
                 <View style={{ alignSelf: "center" }} key={index}>
                   <TouchableOpacity
                     onPress={() =>
-                      navigation.navigate("InterpreterInfo", {
+                      navigation.navigate("Interpreter Info", {
                         interpreter: interpreter,
+                        appointment: appointment,
                       })
                     }
                   >
