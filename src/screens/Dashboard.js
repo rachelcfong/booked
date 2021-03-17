@@ -93,7 +93,9 @@ const Dashboard = ({ navigation }) => {
                         : "Book interpreter"
                     }
                     onClick={() => {
-                      navigation.navigate("Browse");
+                      navigation.navigate("Browse", {
+                        appointment: appointment,
+                      });
                     }}
                   />
                 </View>
@@ -214,13 +216,6 @@ const styles = StyleSheet.create({
   name: {
     marginTop: 5,
   },
-  // unselectedDot: {
-  //   height: 5,
-  //   width: 5,
-  //   borderRadius: 10,
-  //   backgroundColor: "gray",
-  // },
-  // selecteDot: { height: 5, width: 5, borderRadius: 10, backgroundColor: "red" },
   timeCardHeaders: { marginTop: 15 },
 });
 
