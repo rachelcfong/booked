@@ -11,11 +11,15 @@ import moriah from "../../assets/moriah.png";
 import InterpreterExperience from "../components/InterpreterExperience";
 import InterpreterReviews from "../components/InterpreterReviews";
 import InterpreterBio from "../components/InterpreterBio";
+import { Video, AVPlaybackStatus } from "expo-av";
 
 const InterpreterInfo = ({ route, navigation }) => {
   const { email, setEmail, password, setPassword } = useContext(AppContext);
   const { interpreter, appointment } = route.params;
   const [currPage, setCurrPage] = useState(1);
+  const [status, setStatus] = React.useState({});
+  const video = React.useRef(null);
+
   const options = [
     { label: "Bio", value: "0" },
     { label: "Experience", value: "1" },
@@ -58,7 +62,16 @@ const InterpreterInfo = ({ route, navigation }) => {
           />
         </View>
       </View>
-      <Image style={styles.profileImage} source={moriah} />
+      {/* <Image style={styles.profileImage} source={moriah} /> */}
+      <Video
+        ref={video}
+        style={styles.video}
+        source={interpreter.videoSource}
+        useNativeControls
+        resizeMode="contain"
+        isLooping
+        onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+      />
       <View
         style={{
           alignItems: "center",
@@ -142,6 +155,11 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 50,
     width: 300,
+  },
+  video: {
+    alignSelf: "center",
+    width: "100%",
+    height: 235,
   },
 });
 

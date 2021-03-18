@@ -63,28 +63,30 @@ const Browse = ({ route, navigation }) => {
         </View>
         <View style={styles.interpreterCaro}>
           <ScrollView horizontal>
-            {FRIEND_RECC_INTERPRETERS.map((interpreter, index) => {
-              return (
-                <View style={{ alignSelf: "center" }} key={index}>
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.navigate("Interpreter Info", {
-                        interpreter: interpreter,
-                        appointment: appointment,
-                      })
-                    }
-                  >
-                    <VerticalUserCard
-                      name={interpreter.name}
-                      yearsExp={interpreter.yearsExp}
-                      rating={interpreter.rating}
-                      numReviews={interpreter.numReviews}
-                      imgSource={interpreter.imgSource}
-                    />
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
+            {INTERPRETERS.filter((interpreter) => interpreter.reccByFriend).map(
+              (interpreter, index) => {
+                return (
+                  <View style={{ alignSelf: "center" }} key={index}>
+                    <TouchableOpacity
+                      onPress={() =>
+                        navigation.navigate("Interpreter Info", {
+                          interpreter: interpreter,
+                          appointment: appointment,
+                        })
+                      }
+                    >
+                      <VerticalUserCard
+                        name={interpreter.name}
+                        yearsExp={interpreter.yearsExp}
+                        rating={interpreter.rating}
+                        numReviews={interpreter.numReviews}
+                        imgSource={interpreter.imgSource}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                );
+              }
+            )}
           </ScrollView>
         </View>
 

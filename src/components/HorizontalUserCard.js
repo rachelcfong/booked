@@ -2,11 +2,17 @@ import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Image } from "react-native";
 import StarRating from "react-native-star-rating";
 
-const HorizontalUserCard = ({ name, yearsExp, rating, numReviews, imgSource }) => {
+const HorizontalUserCard = ({
+  name,
+  yearsExp,
+  rating,
+  numReviews,
+  imgSource,
+}) => {
   const image = require("../../assets/rachel.png");
   return (
     <View style={styles.card}>
-      <Image style={styles.profileImage} source={image} />
+      <Image style={styles.profileImage} source={imgSource} />
       <View style={styles.cardDetails}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.experience}>{yearsExp + " yrs of experience"}</Text>
