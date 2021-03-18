@@ -22,11 +22,12 @@ const Dashboard = ({ navigation }) => {
     lastName,
     gender,
     preferredLanguage,
+    appointments,
   } = React.useContext(AppContext);
-  const APPOINTMENTS = [
-    { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
-    { interpreter: "", arrivalTime: "1:45pm", startTime: "2:00pm" },
-  ];
+  // const APPOINTMENTS = [
+  //   { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
+  //   { interpreter: "", arrivalTime: "1:45pm", startTime: "2:00pm" },
+  // ];
 
   return (
     <View style={styles.container}>
@@ -41,7 +42,7 @@ const Dashboard = ({ navigation }) => {
 
         <View style={{ height: 460 }}>
           <ScrollView horizontal pagingEnabled>
-            {APPOINTMENTS.map((appointment, index) => {
+            {appointments.map((appointment, index) => {
               return (
                 <View style={styles.card} key={index}>
                   <View style={styles.topCard}>

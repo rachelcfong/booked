@@ -7,7 +7,7 @@ import HorizontalUserCard from "../components/HorizontalUserCard";
 import Tag from "../components/Tag";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AppContext from "../../AppContext";
-import { INTERPRETERS, TAGS } from "../../constants";
+import { INTERPRETERS, FRIEND_RECC_INTERPRETERS, TAGS } from "../../constants";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Browse = ({ route, navigation }) => {
@@ -48,12 +48,12 @@ const Browse = ({ route, navigation }) => {
     <View style={styles.container}>
       {/* Top bar */}
       <View style={styles.topBar}>
-        <View style={{ left: "38%", position: "absolute" }}>
+        <View>
           <Typography text={"Browse"} defaultStyle={true} />
         </View>
-        <View style={{ left: 175 }}>
+        {/* <View style={{ left: 175 }}>
           <ClearButton buttonText="Filter" />
-        </View>
+        </View> */}
       </View>
 
       {/* Recommended by friends */}
@@ -63,7 +63,7 @@ const Browse = ({ route, navigation }) => {
         </View>
         <View style={styles.interpreterCaro}>
           <ScrollView horizontal>
-            {INTERPRETERS.map((interpreter, index) => {
+            {FRIEND_RECC_INTERPRETERS.map((interpreter, index) => {
               return (
                 <View style={{ alignSelf: "center" }} key={index}>
                   <TouchableOpacity
@@ -158,16 +158,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   topBar: {
-    marginTop: 20,
-    flexDirection: "row",
+    // marginTop: 20,
+    // flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-start",
-    position: "relative",
+    // justifyContent: "flex-start",
+    // position: "relative",
   },
   title: {
     fontSize: 15,
     fontWeight: "bold",
-    marginTop: 30,
+    marginTop: 10,
     marginBottom: 10,
     color: "#1E3F63",
   },

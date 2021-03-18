@@ -21,5 +21,7 @@ const AppContext = React.createContext({
   setAbout: () => {},
   reviews: [],
   setReviews: () => {},
+  appointments: [],
+  setAppointments: () => {},
 });
 export default AppContext;

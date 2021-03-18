@@ -14,7 +14,7 @@ import InterpreterInfo from "./src/screens/InterpreterInfo";
 import ConfirmBooking from "./src/screens/ConfirmBooking";
 import BookingConfirmation from "./src/screens/BookingConfirmation";
 import LeaveReview from "./src/screens/LeaveReview";
-import { INITIAL_REVIEWS } from "./constants";
+import { INITIAL_REVIEWS, APPOINTMENTS } from "./constants";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -27,6 +27,7 @@ const App = () => {
   const [preferredLanguage, setPreferredLanguage] = useState("");
   const [about, setAbout] = useState("");
   const [reviews, setReviews] = useState(INITIAL_REVIEWS);
+  const [appointments, setAppointments] = useState(APPOINTMENTS);
 
   return (
     <AppContext.Provider
@@ -51,6 +52,8 @@ const App = () => {
         setAbout: setAbout,
         reviews: reviews,
         setReviews: setReviews,
+        appointments: appointments,
+        setAppointments: setAppointments,
       }}
     >
       <NavigationContainer>

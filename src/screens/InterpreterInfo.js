@@ -52,6 +52,7 @@ const InterpreterInfo = ({ route, navigation }) => {
             onClick={() =>
               navigation.navigate("Confirm Booking", {
                 appointment: appointment,
+                interpreter: interpreter,
               })
             }
           />

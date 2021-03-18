@@ -10,15 +10,11 @@ import {
   TextInput,
 } from "react-native";
 import AppContext from "../../AppContext";
-import interpreter1 from "../../assets/interpreter1.png";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Feed from "./Feed";
 import Dashboard from "./Dashboard";
 import Profile from "./Profile";
-import { APPOINTMENTS } from "../../constants";
 
 const AuthedHome = ({ navigation }) => {
   const {

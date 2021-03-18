@@ -3,11 +3,12 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { INTERPRETERS } from "../../constants";
 import Button from "../components/Button";
 
-const AppointmentCard = ({ navigation, appointment, showButton = true }) => {
-  const interpreter = INTERPRETERS.find(
-    (interpreter) => interpreter.id === appointment.id
-  );
-
+const AppointmentCard = ({
+  navigation,
+  appointment,
+  interpreter = null,
+  showButton = true,
+}) => {
   return (
     <View style={showButton ? styles.cardWithButton : styles.cardWithoutButton}>
       <View style={styles.topCard}>
@@ -24,9 +25,21 @@ const AppointmentCard = ({ navigation, appointment, showButton = true }) => {
             <View>
               <Image
                 style={styles.profileImage}
-                source={interpreter.imgSource}
+                source={
+                  interpreter
+                    ? interpreter.imgSource
+                    : INTERPRETERS.find(
+                        (interpreter) => interpreter.id === appointment.id
+                      ).imgSource
+                }
               />
-              <Text style={styles.name}>{appointment.interpreter}</Text>
+              <Text style={styles.name}>
+                {interpreter
+                  ? interpreter.name
+                  : INTERPRETERS.find(
+                      (interpreter) => interpreter.id === appointment.id
+                    ).name}
+              </Text>
             </View>
           </View>
         </View>
