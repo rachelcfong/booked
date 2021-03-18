@@ -1,5 +1,12 @@
 import React, { useState, useContext } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
 import AppContext from "../../AppContext";
 import ProfileImage from "../../assets/emoji.png";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
@@ -19,100 +26,109 @@ const Profile = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topContainer}></View>
-      <Image style={styles.profileImage} source={ProfileImage} />
-      <View style={styles.textContainer}>
-        <Text style={styles.name}>{firstName ? firstName : "Kim"}</Text>
-        <Text style={styles.grayText}>{"Booked ID: 159320"}</Text>
-      </View>
-      <View style={styles.bioContainer}>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Text style={styles.header}>Sign Language(s)</Text>
-          {!isEditingLangauges ? (
-            <TouchableOpacity
-              style={{ marginRight: 30 }}
-              onPress={() => {
-                setIsEditingLanguages(!isEditingLangauges);
-              }}
-            >
-              <Text style={styles.editButton}>edit</Text>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              style={{ marginRight: 30 }}
-              onPress={() => {
-                setIsEditingLanguages(!isEditingLangauges);
-              }}
-            >
-              <Text style={styles.editButton}>done</Text>
-            </TouchableOpacity>
-          )}
+      <ScrollView>
+        <View style={styles.topContainer}></View>
+        <Image style={styles.profileImage} source={ProfileImage} />
+        <View style={styles.textContainer}>
+          <Text style={styles.name}>{firstName ? firstName : "Kim"}</Text>
+          <Text style={styles.grayText}>{"Booked ID: 159320"}</Text>
         </View>
-        {isEditingLangauges ? (
-          <TextInput
-            style={{ fontSize: 16 }}
-            onChangeText={setPreferredLanguage}
-            value={preferredLanguage}
-            multiline={true}
-            placeholder={"Add your preferred language here"}
-          />
-        ) : (
-          <Text
-            style={preferredLanguage ? styles.bodyText : styles.placeholderText}
+        <View style={styles.bioContainer}>
+          <KeyboardAvoidingView
+            contentContainerStyle={{ position: "relative" }}
+            behavior="position"
           >
-            {preferredLanguage
-              ? preferredLanguage
-              : "Add your preferred language here"}
-          </Text>
-        )}
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Text style={styles.header}>About</Text>
-          {!isEditingAbout ? (
-            <TouchableOpacity
-              style={{ marginRight: 30 }}
-              onPress={() => {
-                setIsEditingAbout(!isEditingAbout);
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
-              <Text style={styles.editButton}>edit</Text>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              style={{ marginRight: 30 }}
-              onPress={() => {
-                setIsEditingAbout(!isEditingAbout);
+              <Text style={styles.header}>Sign Language(s)</Text>
+              {!isEditingLangauges ? (
+                <TouchableOpacity
+                  style={{ marginRight: 30 }}
+                  onPress={() => {
+                    setIsEditingLanguages(!isEditingLangauges);
+                  }}
+                >
+                  <Text style={styles.editButton}>edit</Text>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity
+                  style={{ marginRight: 30 }}
+                  onPress={() => {
+                    setIsEditingLanguages(!isEditingLangauges);
+                  }}
+                >
+                  <Text style={styles.editButton}>done</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+            {isEditingLangauges ? (
+              <TextInput
+                style={{ fontSize: 16 }}
+                onChangeText={setPreferredLanguage}
+                value={preferredLanguage}
+                multiline={true}
+                placeholder={"Add your preferred language here"}
+              />
+            ) : (
+              <Text
+                style={
+                  preferredLanguage ? styles.bodyText : styles.placeholderText
+                }
+              >
+                {preferredLanguage
+                  ? preferredLanguage
+                  : "Add your preferred language here"}
+              </Text>
+            )}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
-              <Text style={styles.editButton}>done</Text>
-            </TouchableOpacity>
-          )}
+              <Text style={styles.header}>About</Text>
+              {!isEditingAbout ? (
+                <TouchableOpacity
+                  style={{ marginRight: 30 }}
+                  onPress={() => {
+                    setIsEditingAbout(!isEditingAbout);
+                  }}
+                >
+                  <Text style={styles.editButton}>edit</Text>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity
+                  style={{ marginRight: 30 }}
+                  onPress={() => {
+                    setIsEditingAbout(!isEditingAbout);
+                  }}
+                >
+                  <Text style={styles.editButton}>done</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+            {!isEditingAbout ? (
+              <Text style={about ? styles.bodyText : styles.placeholderText}>
+                {about ? about : "Add your bio here"}
+              </Text>
+            ) : (
+              <TextInput
+                style={{ fontSize: 16 }}
+                onChangeText={setAbout}
+                value={about}
+                multiline={true}
+                placeholder={"Add your bio here"}
+              />
+            )}
+          </KeyboardAvoidingView>
         </View>
-        {!isEditingAbout ? (
-          <Text style={about ? styles.bodyText : styles.placeholderText}>
-            {about ? about : "Add your bio here"}
-          </Text>
-        ) : (
-          <TextInput
-            style={{ fontSize: 16 }}
-            onChangeText={setAbout}
-            value={about}
-            multiline={true}
-            placeholder={"Add your bio here"}
-          />
-        )}
-      </View>
+      </ScrollView>
     </View>
   );
 };

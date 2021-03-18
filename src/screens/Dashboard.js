@@ -32,7 +32,11 @@ const Dashboard = ({ navigation }) => {
       <ScrollView>
         <View style={styles.topContainer}>
           <Typography
-            text={`Good morning, ${firstName}! ☀️ `}
+            text={
+              firstName
+                ? `Good morning, ${firstName}! ☀️ `
+                : `Good morning, Kim! ☀️ `
+            }
             defaultStyle={true}
           />
           <Text style={styles.h2}>Upcoming appointments</Text>
