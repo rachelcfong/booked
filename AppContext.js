@@ -17,6 +17,8 @@ const AppContext = React.createContext({
   setHealthcareProvider: () => {},
   preferredLanguage: "",
   setPreferredLanguage: () => {},
+  about: "",
+  setAbout: () => {},
   reviews: [],
   setReviews: () => {},
 });

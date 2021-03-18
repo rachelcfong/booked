@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  TextInput,
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import AppContext from "../../AppContext";
 import interpreter1 from "../../assets/interpreter1.png";
 import blankProPic from "../../assets/blankpropic.png";

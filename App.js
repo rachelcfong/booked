@@ -25,6 +25,7 @@ const App = () => {
   const [gender, setGender] = useState("");
   const [healthcareProvider, setHealthcareProvider] = useState("");
   const [preferredLanguage, setPreferredLanguage] = useState("");
+  const [about, setAbout] = useState("");
   const [reviews, setReviews] = useState(INITIAL_REVIEWS);
 
   return (
@@ -46,6 +47,8 @@ const App = () => {
         setHealthcareProvider: setHealthcareProvider,
         preferredLanguage: preferredLanguage,
         setPreferredLanguage: setPreferredLanguage,
+        about: about,
+        setAbout: setAbout,
         reviews: reviews,
         setReviews: setReviews,
       }}
