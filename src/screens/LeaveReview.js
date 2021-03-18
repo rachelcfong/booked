@@ -17,7 +17,12 @@ import AppContext from "../../AppContext";
 
 const LeaveReview = ({ route, navigation }) => {
   const { appointment } = route.params;
-  const { reviews, setReviews } = useContext(AppContext);
+  const {
+    reviews,
+    setReviews,
+    pastAppointments,
+    setPastAppointments,
+  } = useContext(AppContext);
 
   const [rating, setRating] = useState(0);
   const [wouldRecc, setWouldRecc] = useState(false);
@@ -29,6 +34,8 @@ const LeaveReview = ({ route, navigation }) => {
 
   let formComplete =
     onTime !== "" && review !== "" && (report ? reportText !== "" : true);
+
+  console.log("APPT", appointment);
 
   const times = [
     {
@@ -65,6 +72,8 @@ const LeaveReview = ({ route, navigation }) => {
 
   const handleSubmit = () => {
     const completeReview = {
+      user: "You",
+      id: appointment.id,
       rating: rating,
       wouldRecc: wouldRecc,
       onTime: onTime,
@@ -75,6 +84,12 @@ const LeaveReview = ({ route, navigation }) => {
     };
     let newReviews = [...reviews, completeReview];
     setReviews(newReviews);
+    const apptIndex = pastAppointments.findIndex(
+      (appt) => appt.apptId === appointment.apptId
+    );
+    let newAppts = [...pastAppointments];
+    newAppts[apptIndex].hasReview = true;
+    setPastAppointments(newAppts);
     navigation.navigate("Feed");
   };
   return (
@@ -201,7 +216,9 @@ const LeaveReview = ({ route, navigation }) => {
               )}
             </View>
           </View>
-          <View style={{ width: "90%", height: 250, marginTop: 10 }}>
+          <View
+            style={{ width: "90%", marginLeft: 38, height: 250, marginTop: 10 }}
+          >
             <Button
               disabled={!formComplete}
               buttonText={"Submit"}
