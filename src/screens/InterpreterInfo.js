@@ -1,17 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import SwitchSelector from "react-native-switch-selector";
 import Button from "../components/Button";
-import ClearButton from "../components/ClearButton";
-import TextField from "../components/TextField";
-import Typography from "../components/Typography";
 import AppContext from "../../AppContext";
-import moriah from "../../assets/moriah.png";
 import InterpreterExperience from "../components/InterpreterExperience";
 import InterpreterReviews from "../components/InterpreterReviews";
 import InterpreterBio from "../components/InterpreterBio";
-import { Video, AVPlaybackStatus } from "expo-av";
+import { Video } from "expo-av";
 
 const InterpreterInfo = ({ route, navigation }) => {
   const { email, setEmail, password, setPassword } = useContext(AppContext);
@@ -25,12 +20,6 @@ const InterpreterInfo = ({ route, navigation }) => {
     { label: "Experience", value: "1" },
     { label: "Reviews", value: "2" },
   ];
-
-  const handleSubmit = () => {
-    setEmail(email);
-    setPassword(password);
-    navigation.navigate("AuthedHome");
-  };
 
   const renderPage = () => {
     if (currPage === 0) {
