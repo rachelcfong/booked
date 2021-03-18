@@ -74,7 +74,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Moriah and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Gabrielle and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: false,
   },
@@ -92,7 +92,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Moriah and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Victoria and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: false,
   },
@@ -110,7 +110,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Moriah and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Danae and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: false,
   },
@@ -128,7 +128,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Moriah and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Lampra and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: false,
   },
@@ -146,7 +146,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Moriah and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Jordan and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: false,
   },
@@ -164,7 +164,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Moriah and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Scott and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: false,
   },
@@ -182,7 +182,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL"],
     about:
-      "Hi! My name is Stacy and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Kirsten and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: true,
   },
@@ -200,7 +200,7 @@ export const INTERPRETERS = [
     workLocation: "Kaiser in Ridgecrest",
     signLanguages: ["BSL"],
     about:
-      "Hi! My name is Mariana and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Emma and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: true,
   },
@@ -236,7 +236,7 @@ export const INTERPRETERS = [
     workLocation: "Sutter Health in Palo Alto",
     signLanguages: ["ASL", "BSL"],
     about:
-      "Hi! My name is Scott and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
+      "Hi! My name is Lisa and I’m a Child of Deaf Adults (CODA) who grew up learning American Sign Language (ASL). During my London study abroad program in college, I learned British Sign Language (BSL).",
     certification: "ASL certified",
     reccByFriend: true,
   },
@@ -254,7 +254,7 @@ export const REVIEWS = [
     user: "Alexis L",
     interpreterId: 1,
     review:
-      "I’ve been getting Moriah’s help for the past 2 years! She’s great :)",
+      "I’ve been getting Gabrielle's help for the past 2 years! She’s great :)",
     time: "15 minutes ago",
   },
   {
@@ -271,6 +271,83 @@ export const REVIEWS = [
       "I have a Deaf child and he loves having her as his interpreter for his appointments.",
     time: "6 hours ago",
   },
+  {
+    user: "Alexis L",
+    interpreterId: 3,
+    review:
+      "I’ve been getting Gabrielle's help for the past 2 years! She’s great :)",
+    time: "15 minutes ago",
+  },
+  {
+    user: "Rachel F",
+    interpreterId: 4,
+    review:
+      "My friend recommended Rachel and I always try to book her if she’s available!",
+    time: "3 hours ago",
+  },
+  {
+    user: "Karl C",
+    interpreterId: 5,
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
+    time: "6 hours ago",
+  },
+  {
+    user: "Rachel F",
+    interpreterId: 6,
+    review:
+      "My friend recommended Rachel and I always try to book her if she’s available!",
+    time: "3 hours ago",
+  },
+  {
+    user: "Karl C",
+    interpreterId: 7,
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
+    time: "6 hours ago",
+  },
+  {
+    user: "Rachel F",
+    interpreterId: 7,
+    review:
+      "My friend recommended Rachel and I always try to book her if she’s available!",
+    time: "3 hours ago",
+  },
+  {
+    user: "Karl C",
+    interpreterId: 8,
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
+    time: "6 hours ago",
+  },
+  {
+    user: "Rachel F",
+    interpreterId: 8,
+    review:
+      "My friend recommended Rachel and I always try to book her if she’s available!",
+    time: "3 hours ago",
+  },
+  {
+    user: "Karl C",
+    interpreterId: 9,
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
+    time: "6 hours ago",
+  },
+  {
+    user: "Rachel F",
+    interpreterId: 9,
+    review:
+      "My friend recommended Rachel and I always try to book her if she’s available!",
+    time: "3 hours ago",
+  },
+  {
+    user: "Karl C",
+    interpreterId: 10,
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
+    time: "6 hours ago",
+  },
 ];
 
 export const INITIAL_REVIEWS = [
@@ -281,7 +358,8 @@ export const INITIAL_REVIEWS = [
     wouldRecc: true,
     onTime: "5 min late",
     doBetter: "Politeness",
-    review: "This was a great appointment, a great interpreter",
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
     report: false,
     reportText: "",
     time: "15 min ago",
@@ -289,10 +367,163 @@ export const INITIAL_REVIEWS = [
   {
     user: "You",
     id: 1,
+    rating: 5,
     wouldRecc: true,
     onTime: "5 min late",
     doBetter: "Politeness",
-    review: "This was a great appointment, a great interpreter",
+    review:
+      "My friend recommended Gabrielle and I always try to book her if she’s available!",
+    report: false,
+    reportText: "",
+    time: "15 min ago",
+  },
+  {
+    user: "Mika L",
+    id: 6,
+    wouldRecc: true,
+    rating: 4.5,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "My friend recommended Scott! He's the best.",
+    report: false,
+    reportText: "",
+    time: "20 min ago",
+  },
+  {
+    user: "Bihan E",
+    id: 3,
+    rating: 5,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "Danae is the sweetest. So patient and kind.",
+    report: false,
+    reportText: "",
+    time: "30 min ago",
+  },
+  {
+    user: "Sam B",
+    id: 9,
+    wouldRecc: true,
+    rating: 3.5,
+    onTime: "15 min late",
+    doBetter: "Politeness",
+    review: "Arrived 15 min late, but still great quality interpreteration.",
+    report: false,
+    reportText: "",
+    time: "50 min ago",
+  },
+  {
+    user: "Bihan E",
+    id: 5,
+    rating: 4,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "Jordan is the best interpreter you could ask for.",
+    report: false,
+    reportText: "",
+    time: "30 min ago",
+  },
+  {
+    user: "Jaden C",
+    id: 8,
+    wouldRecc: true,
+    rating: 4.5,
+    onTime: "15 min late",
+    doBetter: "Politeness",
+    review: "Emma was so helpful. Would book her again!",
+    report: false,
+    reportText: "",
+    time: "50 min ago",
+  },
+  {
+    user: "Carter P",
+    id: 4,
+    rating: 5,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "A fantastic person to work with.",
+    report: false,
+    reportText: "",
+    time: "30 min ago",
+  },
+];
+
+export const FRIENDS_REVIEWS = [
+  {
+    user: "Wendy D",
+    id: 6,
+    wouldRecc: true,
+    rating: 4.5,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "Scott is the best you could ask for.",
+    report: false,
+    reportText: "",
+    time: "20 min ago",
+  },
+
+  {
+    user: "Manuel P",
+    id: 1,
+    rating: 5,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review:
+      "I've been working with Gabrielle for many years, always a pleasure.",
+    report: false,
+    reportText: "",
+    time: "15 min ago",
+  },
+  {
+    user: "Teddy V",
+    id: 9,
+    wouldRecc: true,
+    rating: 3.5,
+    onTime: "15 min late",
+    doBetter: "Politeness",
+    review: "Could be more prompt. Still overall a great experience.",
+    report: false,
+    reportText: "",
+    time: "50 min ago",
+  },
+  {
+    user: "Marissa C",
+    id: 3,
+    rating: 5,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "Danae is so professional and kind. Please do work with her!",
+    report: false,
+    reportText: "",
+    time: "30 min ago",
+  },
+
+  {
+    user: "Ricky Y",
+    id: 5,
+    rating: 4,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review: "Danae is the sweetest. So patient and kind.",
+    report: false,
+    reportText: "",
+    time: "30 min ago",
+  },
+  {
+    user: "Laura F",
+    id: 1,
+    rating: 4,
+    wouldRecc: true,
+    onTime: "5 min late",
+    doBetter: "Politeness",
+    review:
+      "I have a Deaf child and he loves having her as his interpreter for his appointments.",
     report: false,
     reportText: "",
     time: "15 min ago",

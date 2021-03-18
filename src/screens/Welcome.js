@@ -46,7 +46,7 @@ const Welcome = ({ navigation }) => {
   const handleSubmit = () => {
     setEmail(email);
     setPassword(password);
-    navigation.navigate("AuthedHome");
+    navigation.navigate("Booked");
   };
 
   return (

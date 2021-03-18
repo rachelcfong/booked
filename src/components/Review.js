@@ -33,7 +33,7 @@ const Review = ({ review }) => {
           disabled={true}
           starSize={17}
           maxStars={5}
-          rating={3}
+          rating={review.rating}
           fullStarColor={"#1E3F63"}
           emptyStarColor={"#1E3F63"}
           halfStarEnabled={true}
@@ -44,9 +44,6 @@ const Review = ({ review }) => {
 };
 
 const styles = StyleSheet.create({
-  //   container: {
-  //     height: 90,
-  //   },
   topBorder: {
     height: 2,
     width: 380,

@@ -35,8 +35,6 @@ const LeaveReview = ({ route, navigation }) => {
   let formComplete =
     onTime !== "" && review !== "" && (report ? reportText !== "" : true);
 
-  console.log("APPT", appointment);
-
   const times = [
     {
       label: "On-time",
@@ -82,7 +80,7 @@ const LeaveReview = ({ route, navigation }) => {
       report: report,
       reportText: reportText,
     };
-    let newReviews = [...reviews, completeReview];
+    let newReviews = [completeReview].concat([...reviews]);
     setReviews(newReviews);
     const apptIndex = pastAppointments.findIndex(
       (appt) => appt.apptId === appointment.apptId
