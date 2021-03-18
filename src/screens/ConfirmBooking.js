@@ -1,54 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import Button from "../components/Button";
 import interpreter1 from "../../assets/interpreter1.png";
 import blankProPic from "../../assets/blankpropic.png";
+import AppointmentCard from "../components/AppointmentCard";
+import AppContext from "../../AppContext";
 
 const ConfirmBooking = ({ route, navigation }) => {
-  const { appointment } = route.params;
+  const { appointment, interpreter } = route.params;
+  const { appointments, setAppointments } = useContext(AppContext);
+
+  const handleSubmit = () => {
+    let apptIndex = appointments.findIndex(
+      (appt) => appt.apptId === appointment.apptId
+    );
+    let newAppts = [...appointments];
+    newAppts[apptIndex].interpreter = interpreter.name;
+    setAppointments(newAppts);
+    navigation.navigate("Booking Confirmation");
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Your Booking</Text>
-      <View style={styles.card}>
-        <View style={styles.topCard}>
-          <Text style={styles.h1}>Physical examination</Text>
-          <View style={{ marginTop: 10 }}>
-            <Text style={styles.body}>Friday March 5 2021</Text>
-            <Text style={styles.body}>Stanford Hospital</Text>
-          </View>
-        </View>
-        <View style={styles.midCard}>
-          <View style={styles.container}>
-            <Text>Interpreter</Text>
-            <View style={styles.interpreterCard}>
-              <View>
-                <Image
-                  style={styles.profileImage}
-                  source={
-                    appointment.interpreter !== "" ? interpreter1 : blankProPic
-                  }
-                />
-                <Text style={styles.name}>{appointment.interpreter}</Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.container}>
-            <Text>Time</Text>
-            <View style={styles.timeCard}>
-              <Text>Arrive at</Text>
-              <Text style={styles.h1}>{appointment.arrivalTime}</Text>
-              <Text style={styles.timeCardHeaders}>Starts at</Text>
-              <Text style={styles.h1}>{appointment.startTime}</Text>
-            </View>
-          </View>
-        </View>
-      </View>
+      <AppointmentCard
+        appointment={appointment}
+        interpreter={interpreter}
+        showButton={false}
+      />
       <View style={styles.confirmButton}>
-        <Button
-          buttonText={"Confirm"}
-          onClick={() => navigation.navigate("Booking Confirmation")}
-        />
+        <Button buttonText={"Confirm"} onClick={handleSubmit} />
       </View>
     </View>
   );

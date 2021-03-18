@@ -7,7 +7,6 @@ const BottomNavigationBar = ({ navigation }) => {
       <TouchableOpacity
         style={styles.iconTitle}
         onPress={() => {
-          console.log(navigation);
           navigation.navigate("Home");
         }}
       >

@@ -5,7 +5,6 @@ import Review from "../components/Review";
 
 const Feed = ({ navigation }) => {
   const { reviews } = useContext(AppContext);
-  console.log("REVIWEWS", reviews);
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Reviews</Text>

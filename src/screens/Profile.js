@@ -9,6 +9,7 @@ import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 const Profile = ({ navigation }) => {
   const {
     firstName,
+    lastName,
     preferredLanguage,
     setPreferredLanguage,
     about,
