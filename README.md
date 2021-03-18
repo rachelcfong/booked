@@ -4,11 +4,13 @@ Booked Prototype README
 Rachel Fong, Alexis Lowbar, Jianna So, Mika Isayama
 
 This prototype is meant to run on an iPhone 11.
+
 Tools used
 React Native
 Visual Studio Code
 Github
 Expo
+
 Operating instructions
 Create an empty directory named “Booked.”
 From the terminal, change into the Booked directory. For example, “cd ./pathtodirectory/Booked”
