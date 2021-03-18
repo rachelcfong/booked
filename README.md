@@ -12,8 +12,9 @@ Tools used
 * Expo
 
 Operating instructions
-Create an empty directory named “Booked.”
-From the terminal, change into the Booked directory. For example, “cd ./pathtodirectory/Booked”
+
+1. Create an empty directory named “Booked.”
+2. From the terminal, change into the Booked directory. For example, “cd ./pathtodirectory/Booked”
 Clone the repo from the terminal with the command “git clone https://github.com/rachelcfong/booked.git”
 Run “npm install” to install dependencies. This may take some time.
 Run “expo start” to start the app. A new page should open in your computer’s browser that shows a QR code on the left hand side.
