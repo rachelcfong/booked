@@ -23,6 +23,7 @@ const Dashboard = ({ navigation }) => {
     gender,
     preferredLanguage,
     appointments,
+    pastAppointments,
   } = React.useContext(AppContext);
   // const APPOINTMENTS = [
   //   { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
@@ -106,7 +107,7 @@ const Dashboard = ({ navigation }) => {
           <Text style={styles.miniTitles}>Past interpreters</Text>
           <View style={styles.pastInterpretersContainer}>
             <ScrollView horizontal>
-              {PAST_APPOINTMENTS.map((appointment, index) => {
+              {pastAppointments.map((appointment, index) => {
                 return (
                   <VerticalPastInterpreterCard
                     navigation={navigation}

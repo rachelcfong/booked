@@ -17,8 +17,9 @@ export const APPOINTMENTS = [
 
 export const PAST_APPOINTMENTS = [
   {
-    interpreter: "Rachel F",
+    interpreter: "Victoria F",
     id: 2,
+    apptId: 3,
     arrivalTime: "8:45am",
     startTime: "9:00am",
     dateString: "Friday March 5, 2021",
@@ -27,8 +28,9 @@ export const PAST_APPOINTMENTS = [
     hasReview: false,
   },
   {
-    interpreter: "Alex L",
-    id: 6,
+    interpreter: "Lampra L",
+    id: 4,
+    apptId: 4,
     arrivalTime: "10:45am",
     startTime: "11:00am",
     dateString: "Friday March 5, 2021",
@@ -37,8 +39,9 @@ export const PAST_APPOINTMENTS = [
     hasReview: true,
   },
   {
-    interpreter: "Jianna S",
+    interpreter: "Emma S",
     id: 3,
+    apptId: 5,
     arrivalTime: "12:45pm",
     startTime: "1:00pm",
     dateString: "Friday March 5, 2021",
