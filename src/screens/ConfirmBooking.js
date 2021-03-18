@@ -16,6 +16,7 @@ const ConfirmBooking = ({ route, navigation }) => {
     );
     let newAppts = [...appointments];
     newAppts[apptIndex].interpreter = interpreter.name;
+    newAppts[apptIndex].id = interpreter.id;
     setAppointments(newAppts);
     navigation.navigate("Booking Confirmation");
   };

@@ -11,7 +11,7 @@ import ClearButton from "../components/ClearButton";
 import TextField from "../components/TextField";
 import ErrorText from "../components/ErrorText";
 import Typography from "../components/Typography";
-import { PAST_APPOINTMENTS } from "../../constants";
+import { INTERPRETERS } from "../../constants";
 import VerticalPastInterpreterCard from "../components/VerticalPastInterpreterCard";
 
 const Dashboard = ({ navigation }) => {
@@ -25,10 +25,6 @@ const Dashboard = ({ navigation }) => {
     appointments,
     pastAppointments,
   } = React.useContext(AppContext);
-  // const APPOINTMENTS = [
-  //   { interpreter: "Gabrielle S", arrivalTime: "8.45am", startTime: "9:00am" },
-  //   { interpreter: "", arrivalTime: "1:45pm", startTime: "2:00pm" },
-  // ];
 
   return (
     <View style={styles.container}>
@@ -49,8 +45,8 @@ const Dashboard = ({ navigation }) => {
                   <View style={styles.topCard}>
                     <Text style={styles.h1}>Physical examination</Text>
                     <View style={{ marginTop: 10 }}>
-                      <Text style={styles.body}>Friday March 5 2021</Text>
-                      <Text style={styles.body}>Stanford Hospital</Text>
+                      <Text style={styles.body}>{appointment.dateString}</Text>
+                      <Text style={styles.body}>{appointment.location}</Text>
                     </View>
                   </View>
                   <View style={styles.midCard}>
@@ -62,7 +58,10 @@ const Dashboard = ({ navigation }) => {
                             style={styles.profileImage}
                             source={
                               appointment.interpreter !== ""
-                                ? interpreter1
+                                ? INTERPRETERS.find(
+                                    (interpreter) =>
+                                      appointment.id === interpreter.id
+                                  ).imgSource
                                 : blankProPic
                             }
                           />

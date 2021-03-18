@@ -1,10 +1,14 @@
 export const APPOINTMENTS = [
   {
     interpreter: "Gabrielle S",
-    id: "1",
+    id: 1,
     apptId: 1,
     arrivalTime: "8:45am",
     startTime: "9:00am",
+    dateString: "Saturday April 24, 2021",
+    date: "4/24",
+    location: "Palo Alto Hospital",
+    hasReview: false,
   },
   {
     interpreter: "",
@@ -12,6 +16,10 @@ export const APPOINTMENTS = [
     apptId: 2,
     arrivalTime: "1:45pm",
     startTime: "2:00pm",
+    dateString: "Tuesday May 4, 2021",
+    date: "3/4",
+    location: "Palo Alto Hospital",
+    hasReview: false,
   },
 ];
 
@@ -33,8 +41,8 @@ export const PAST_APPOINTMENTS = [
     apptId: 4,
     arrivalTime: "10:45am",
     startTime: "11:00am",
-    dateString: "Friday March 5, 2021",
-    date: "3/5",
+    dateString: "Tuesday Feb 9, 2021",
+    date: "2/9",
     location: "Sutter Health Oakland",
     hasReview: true,
   },
@@ -44,8 +52,8 @@ export const PAST_APPOINTMENTS = [
     apptId: 5,
     arrivalTime: "12:45pm",
     startTime: "1:00pm",
-    dateString: "Friday March 5, 2021",
-    date: "3/5",
+    dateString: "Thursday Dec 31, 2020",
+    date: "12/31",
     location: "Kaiser Piedmont",
     hasReview: false,
   },

@@ -14,7 +14,7 @@ const Review = ({ review }) => {
       <View
         style={{
           flexDirection: "row",
-          marginTop: 10,
+          marginTop: 15,
           justifyContent: "space-between",
         }}
       >
