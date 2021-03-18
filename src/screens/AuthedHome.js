@@ -17,12 +17,18 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Feed from "./Feed";
 import Dashboard from "./Dashboard";
+import Profile from "./Profile";
 import { APPOINTMENTS } from "../../constants";
 
 const AuthedHome = ({ navigation }) => {
-  const { email, password, firstName, lastName, gender, preferredLanguage } = React.useContext(
-    AppContext
-  );
+  const {
+    email,
+    password,
+    firstName,
+    lastName,
+    gender,
+    preferredLanguage,
+  } = React.useContext(AppContext);
 
   const Tab = createBottomTabNavigator();
 
@@ -37,6 +43,8 @@ const AuthedHome = ({ navigation }) => {
               iconName = focused ? "ios-home-sharp" : "ios-home-outline";
             } else if (route.name === "Feed") {
               iconName = focused ? "ios-star" : "star-outline";
+            } else if (route.name === "Profile") {
+              iconName = focused ? "person" : "person-outline";
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -45,9 +53,11 @@ const AuthedHome = ({ navigation }) => {
           activeTintColor: "#307FE2",
           inactiveTintColor: "gray",
         }}
+        initialRouteName={"Dashboard"}
       >
-        <Tab.Screen name="Dashboard" component={Dashboard} />
         <Tab.Screen name="Feed" component={Feed} />
+        <Tab.Screen name="Dashboard" component={Dashboard} />
+        <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
     </>
   );
