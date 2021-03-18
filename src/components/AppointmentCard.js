@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { INTERPRETERS } from "../../constants";
 import Button from "../components/Button";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const AppointmentCard = ({
   navigation,
@@ -11,16 +12,28 @@ const AppointmentCard = ({
 }) => {
   return (
     <View style={showButton ? styles.cardWithButton : styles.cardWithoutButton}>
-      <View style={styles.topCard}>
-        <Text style={styles.h1}>Physical examination</Text>
-        <View style={{ marginTop: 10 }}>
-          <Text style={styles.body}>Friday March 5 2021</Text>
-          <Text style={styles.body}>Stanford Hospital</Text>
+      <View style={styles.topCardContainer}>
+        <View style={styles.topCard}>
+          <Text style={styles.h1}>Physical examination</Text>
+          <View style={{ marginTop: 10, flexDirection: "row" }}>
+            <Ionicons
+              style={{ marginRight: 10, marginTop: 5 }}
+              name={"time-outline"}
+              size={25}
+              color={"#307FE2"}
+            />
+            <View>
+              <Text style={styles.body}>Friday March 5 2021</Text>
+              <Text style={styles.body}>Stanford Hospital</Text>
+            </View>
+          </View>
         </View>
       </View>
       <View style={styles.midCard}>
         <View style={styles.container}>
-          <Text>Interpreter</Text>
+          <Text style={{ color: "#1E3F63", fontWeight: "bold" }}>
+            Interpreter
+          </Text>
           <View style={styles.interpreterCard}>
             <View>
               <Image
@@ -44,7 +57,7 @@ const AppointmentCard = ({
           </View>
         </View>
         <View style={styles.container}>
-          <Text>Time</Text>
+          <Text style={{ color: "#1E3F63", fontWeight: "bold" }}>Time</Text>
           <View style={styles.timeCard}>
             <Text>Arrive at</Text>
             <Text style={styles.h1}>{appointment.arrivalTime}</Text>
@@ -76,7 +89,7 @@ const AppointmentCard = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+
     alignItems: "center",
   },
   topContainer: {
@@ -88,7 +101,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 370,
     height: 420,
-    backgroundColor: "white",
+    backgroundColor: "#F5FAFF",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.3,
@@ -100,7 +113,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 370,
     height: 350,
-    backgroundColor: "white",
+    backgroundColor: "#F5FAFF",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.3,
@@ -194,7 +207,7 @@ const styles = StyleSheet.create({
   },
   body: {
     marginTop: 5,
-    color: "#767676",
+    color: "#1E3F63",
   },
   name: {
     marginTop: 5,

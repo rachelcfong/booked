@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import AppContext from "../../AppContext";
 import Review from "../components/Review";
 import SwitchSelector from "react-native-switch-selector";
@@ -68,29 +68,31 @@ const Feed = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          borderWidth: 1.5,
-          borderColor: "#307FE2",
-          borderRadius: 50,
-          marginBottom: 20,
-        }}
-      >
-        <SwitchSelector
-          backgroundColor={"#F5FAFF"}
-          buttonColor={"#FFF"}
-          selectedColor={"#307FE2"}
-          bold={true}
-          height={45}
-          options={options}
-          textColor={"#BCC5D0"}
-          initial={currPage}
-          onPress={(value) => {
-            setCurrPage(Number(value));
+      <ScrollView>
+        <View
+          style={{
+            borderWidth: 1.5,
+            borderColor: "#307FE2",
+            borderRadius: 50,
+            marginBottom: 20,
           }}
-        />
-      </View>
-      {currPage === 0 ? <ReviewsNearYouFeed /> : <FriendsFeed />}
+        >
+          <SwitchSelector
+            backgroundColor={"#F5FAFF"}
+            buttonColor={"#FFF"}
+            selectedColor={"#307FE2"}
+            bold={true}
+            height={45}
+            options={options}
+            textColor={"#BCC5D0"}
+            initial={currPage}
+            onPress={(value) => {
+              setCurrPage(Number(value));
+            }}
+          />
+        </View>
+        {currPage === 0 ? <ReviewsNearYouFeed /> : <FriendsFeed />}
+      </ScrollView>
     </View>
   );
 };

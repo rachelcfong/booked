@@ -67,8 +67,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="AuthedHome" component={AuthedHome} />
-          <Stack.Screen name="SignUpEmail" component={SignUpEmail} />
+          <Stack.Screen name="Booked" component={AuthedHome} />
+          <Stack.Screen name="Sign up" component={SignUpEmail} />
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Browse" component={Browse} />
           <Stack.Screen name="Interpreter Info" component={InterpreterInfo} />

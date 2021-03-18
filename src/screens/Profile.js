@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import AppContext from "../../AppContext";
-import Review from "../components/Review";
-import ProfileImage from "../../assets/blankpropic.png";
-import ClearButton from "../components/ClearButton";
+import ProfileImage from "../../assets/emoji.png";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 
 const Profile = ({ navigation }) => {
@@ -25,6 +23,7 @@ const Profile = ({ navigation }) => {
       <Image style={styles.profileImage} source={ProfileImage} />
       <View style={styles.textContainer}>
         <Text style={styles.name}>{firstName ? firstName : "Kim"}</Text>
+        <Text style={styles.grayText}>{"Booked ID: 159320"}</Text>
       </View>
       <View style={styles.bioContainer}>
         <View
@@ -61,6 +60,7 @@ const Profile = ({ navigation }) => {
             onChangeText={setPreferredLanguage}
             value={preferredLanguage}
             multiline={true}
+            placeholder={"Add your preferred language here"}
           />
         ) : (
           <Text
@@ -100,7 +100,7 @@ const Profile = ({ navigation }) => {
           )}
         </View>
         {!isEditingAbout ? (
-          <Text style={styles.bodyText}>
+          <Text style={about ? styles.bodyText : styles.placeholderText}>
             {about ? about : "Add your bio here"}
           </Text>
         ) : (
@@ -109,6 +109,7 @@ const Profile = ({ navigation }) => {
             onChangeText={setAbout}
             value={about}
             multiline={true}
+            placeholder={"Add your bio here"}
           />
         )}
       </View>
@@ -146,6 +147,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 20,
   },
+  grayText: { fontSize: 16, color: "#AAAAAA", marginTop: 10 },
   name: {
     fontSize: 30,
     fontWeight: "bold",

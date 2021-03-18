@@ -4,9 +4,9 @@ import AppContext from "../../AppContext";
 import Review from "./Review";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { FRIENDS_REVIEWS } from "../../constants";
 
 const FriendsFeed = ({ navigation }) => {
-  const { reviews } = useContext(AppContext);
   const [bookedId, setBookedId] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -52,7 +52,7 @@ const FriendsFeed = ({ navigation }) => {
       ) : (
         <></>
       )}
-      {reviews.map((review, index) => {
+      {FRIENDS_REVIEWS.map((review, index) => {
         return (
           <View key={index}>
             <Review review={review} />

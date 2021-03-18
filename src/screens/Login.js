@@ -6,14 +6,28 @@ import ClearButton from "../components/ClearButton";
 import TextField from "../components/TextField";
 import Typography from "../components/Typography";
 import AppContext from "../../AppContext";
+import ErrorText from "../components/ErrorText";
 
 const Login = ({ navigation }) => {
   const { email, setEmail, password, setPassword } = useContext(AppContext);
+  const [showEmailSent, setShowEmailSent] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = () => {
     setEmail(email);
     setPassword(password);
-    navigation.navigate("AuthedHome");
+    navigation.navigate("Booked");
+  };
+
+  const handlePress = () => {
+    setShowEmailSent(true);
+    if (email) {
+      setErrorMessage(`A password reset email was sent to ${email}`);
+    } else {
+      setErrorMessage(
+        "Please enter your email address for a password reset email."
+      );
+    }
   };
 
   return (
@@ -29,7 +43,14 @@ const Login = ({ navigation }) => {
       <View style={styles.button}>
         <Button buttonText="Log in" onClick={handleSubmit} />
       </View>
-      <ClearButton buttonText="Forgot your password?" onClick={() => {}} />
+      <ClearButton buttonText="Forgot your password?" onClick={handlePress} />
+      {showEmailSent ? (
+        <View style={{ width: 340, marginTop: 15, alignItems: "center" }}>
+          <ErrorText text={errorMessage} />
+        </View>
+      ) : (
+        <></>
+      )}
     </View>
   );
 };

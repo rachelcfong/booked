@@ -20,9 +20,15 @@ const Home = ({ navigation }) => {
       <Image style={styles.backgroundImage} source={backgroundImage} />
       <View style={styles.bottomContainer}>
         <View style={{ marginLeft: 20, width: "100%" }}>
-          <Button buttonText="Login" onClick={() => navigation.navigate("Login")} />
+          <Button
+            buttonText="Login"
+            onClick={() => navigation.navigate("Login")}
+          />
         </View>
-        <ClearButton buttonText="Sign up" onClick={() => navigation.navigate("SignUpEmail")} />
+        <ClearButton
+          buttonText="Sign up"
+          onClick={() => navigation.navigate("Sign up")}
+        />
       </View>
       <View style={styles.backgroundGradient}>
         <Image style={styles.backgroundGradient} source={backgroundGradient} />

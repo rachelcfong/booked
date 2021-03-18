@@ -12,6 +12,7 @@ import TextField from "../components/TextField";
 import ErrorText from "../components/ErrorText";
 import Typography from "../components/Typography";
 import { INTERPRETERS } from "../../constants";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import VerticalPastInterpreterCard from "../components/VerticalPastInterpreterCard";
 
 const Dashboard = ({ navigation }) => {
@@ -44,14 +45,26 @@ const Dashboard = ({ navigation }) => {
                 <View style={styles.card} key={index}>
                   <View style={styles.topCard}>
                     <Text style={styles.h1}>Physical examination</Text>
-                    <View style={{ marginTop: 10 }}>
-                      <Text style={styles.body}>{appointment.dateString}</Text>
-                      <Text style={styles.body}>{appointment.location}</Text>
+                    <View style={{ marginTop: 10, flexDirection: "row" }}>
+                      <Ionicons
+                        style={{ marginRight: 10, marginTop: 5 }}
+                        name={"time-outline"}
+                        size={25}
+                        color={"#307FE2"}
+                      />
+                      <View>
+                        <Text style={styles.body}>
+                          {appointment.dateString}
+                        </Text>
+                        <Text style={styles.body}>{appointment.location}</Text>
+                      </View>
                     </View>
                   </View>
                   <View style={styles.midCard}>
-                    <View style={styles.container}>
-                      <Text>Interpreter</Text>
+                    <View style={{ flex: 1, alignItems: "center" }}>
+                      <Text style={{ color: "#1E3F63", fontWeight: "bold" }}>
+                        Interpreter
+                      </Text>
                       <View style={styles.interpreterCard}>
                         <View>
                           <Image
@@ -71,8 +84,10 @@ const Dashboard = ({ navigation }) => {
                         </View>
                       </View>
                     </View>
-                    <View style={styles.container}>
-                      <Text>Time</Text>
+                    <View style={{ flex: 1, alignItems: "center" }}>
+                      <Text style={{ color: "#1E3F63", fontWeight: "bold" }}>
+                        Time
+                      </Text>
                       <View style={styles.timeCard}>
                         <Text>Arrive at</Text>
                         <Text style={styles.h1}>{appointment.arrivalTime}</Text>
@@ -140,7 +155,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 370,
     height: 420,
-    backgroundColor: "white",
+    backgroundColor: "#F5FAFF",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.3,
@@ -234,7 +249,7 @@ const styles = StyleSheet.create({
   },
   body: {
     marginTop: 5,
-    color: "#767676",
+    color: "#1E3F63",
   },
   name: {
     marginTop: 5,

@@ -31,7 +31,7 @@ const BookingConfirmation = ({ navigation }) => {
         <Button
           buttonText={"Back to home"}
           onClick={() => {
-            navigation.navigate("AuthedHome");
+            navigation.navigate("Booked");
           }}
         />
       </View>
